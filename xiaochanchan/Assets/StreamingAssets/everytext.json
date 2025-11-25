@@ -1,0 +1,265 @@
+{
+    "list": [
+        {
+            "id":0,
+            "zbid":5,
+            "name":"真劈实雳",
+            "jianjie":"每次攻击有20%触发一道闪电",
+            "leixing":"everyatk",
+            "duixiang":1,
+            "shuxing":"hp",
+            "fangshi":"+",
+            "gailv":1,
+            "zhi":-100
+            
+        },
+        {
+            "id":1,
+            "name":"破伤风之刃",
+            "jianjie":"每次攻击有20%的概率施加一层剧毒",
+            "leixing":"everyatk",
+            "shuxing":"du",
+            "fangshi":"+",
+            "duixiang":1,
+            "gailv":0.2,
+            "zhi":1
+        },
+        {
+            "id":2,
+            "zbid":0,
+            "name":"元素魔方",
+            "jianjie":"大招施放后恢复20%的蓝量",
+            "leixing":"everydz",
+            "duixiang":0,
+            "shuxing":"mp",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":0.2
+
+        },
+        {
+            "id":3,
+            "zbid":1,
+            "name":"野兽之爪",
+            "jianjie":"每次攻击使攻击力临时+10%",
+            "leixing":"everyatk",
+            "duixiang":0,
+            "shuxing":"atk",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":0.1
+
+        },
+        {
+            "id":4,
+            "zbid":22,
+            "name":"时空沙漏",
+            "jianjie":"每次攻击有30%的概率回复所有蓝量",
+            "leixing":"everyatk",
+            "duixiang":0,
+            "shuxing":"mp",
+            "fangshi":"*",
+            "gailv":0.3,
+            "zhi":1
+
+        },
+        {
+            "id":5,
+            "zbid":20,
+            "name":"恶魔契约",
+            "jianjie":"攻击力+50%，但每秒损失4%的最大生命值",
+            "leixing":"everytime",
+            "duixiang":0,
+            "shuxing":"hp",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":-0.04
+        },
+        {
+            "id":6,
+            "zbid":21,
+            "name":"红甲虫",
+            "jianjie":"每秒恢复3%的最大生命值",
+            "leixing":"everytime",
+            "duixiang":0,
+            "shuxing":"hp",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":0.03
+        },
+        {
+            "id":7,
+            "zbid":23,
+            "name":"荆棘甲",
+            "jianjie":"每次受到攻击反弹30%的伤害",
+            "leixing":"everyhit",
+            "duixiang":1,
+            "shuxing":"hp",
+            "fangshi":"+",
+            "gailv":0,
+            "auto":true,
+            "autofangshi":"*",
+            "zhi":-0.3
+            
+        },
+        {
+            "id":8,
+            "zbid":19,
+            "name":"奥术法典",
+            "jianjie":"每次攻击回复造成伤害20%的蓝量",
+            "leixing":"everyatk",
+            "duixiang":0,
+            "shuxing":"mp",
+            "fangshi":"+",
+            "gailv":0,
+            "auto":true,
+            "autofangshi":"*",
+            "zhi":0.2
+        },
+        {
+            "id":9,
+            "zbid":16,
+            "name":"饮血之刃",
+            "jianjie":"每次攻击回复造成伤害20%的血量",
+            "leixing":"everyatk",
+            "duixiang":0,
+            "shuxing":"hp",
+            "fangshi":"+",
+            "gailv":0,
+            "auto":true,
+            "autofangshi":"*",
+            "zhi":0.2
+        },
+        {
+            "id":10,
+            "zbid":17,
+            "name":"冰霜之甲",
+            "jianjie":"受到攻击时敌人30%的概率获得2层冰霜",
+            "leixing":"everyhit",
+            "duixiang":1,
+            "shuxing":"bingshuang",
+            "fangshi":"+",
+            "gailv":0.3,
+            "zhi":2
+
+        },
+        {
+            "id":11,
+            "zbid":18,
+            "name":"羊刀",
+            "jianjie":"每次攻击使攻速临时+5%",
+            "leixing":"everyatk",
+            "duixiang":0,
+            "shuxing":"dps",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":0.05
+        },
+        {
+            "id":12,
+            "zbid":29,
+            "name":"祛魔手套",
+            "jianjie":"每次攻击，敌人-2点蓝量",
+            "leixing":"everyatk",
+            "duixiang":1,
+            "shuxing":"mp",
+            "fangshi":"+",
+            "gailv":0,
+            "zhi":-2
+        
+        },
+        {
+            "id":13,
+            "zbid":30,
+            "name":"反物质核心",
+            "jianjie":"攻击额外造成敌人2%最大生命值的伤害",
+            "leixing":"everyatk",
+            "duixiang":1,
+            "shuxing":"hp",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":-0.02
+        
+        },
+        {
+            "id":14,
+            "zbid":15,
+            "name":"诅咒项链",
+            "jianjie":"固定，现在与每次胜利攻击力+30%",
+            "leixing":"everyatk",
+            "duixiang":0,
+            "shuxing":"atk",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":0.3
+        
+        },
+        {
+            "id":15,
+            "zbid":31,
+            "name": "狂怒之剑",
+            "jieshao": "血量每减少10%攻击力+10%"
+
+
+        },
+        {
+            "id":16,
+            "zbid":32,
+            "name": "圣光法球",
+            "jieshao": "施放大招后恢复20%的最大生命值",
+            "leixing":"everybig",
+            "duixiang":0,
+            "shuxing":"hp",
+            "fangshi":"*",
+            "gailv":0,
+            "zhi":0.2
+        },
+        {
+            "id":17,
+            "zbid":35,
+            "name":"残破号角",
+            "jieshao": "每次攻击10%获得2秒鼓舞buff",
+            "leixing":"everyatk",
+            "shuxing":"guwu",
+            "fangshi":"+",
+            "duixiang":1,
+            "gailv":0.2,
+            "zhi":1
+        },
+        {
+            "id":18,
+            "zbid":37,
+            "name":"反击螺旋",
+            "jieshao": "每第4次受击时，对敌人造成50点伤害",
+            "Action":"true",
+            "leixing":"everyhitAction",
+            "duixiang":1,
+            "shuxing":"hp",
+            "fangshi":"+",
+            "zhi":-50
+        },
+        {
+            "id":19,
+            "zbid":38,
+            "name":"支援未来",
+            "jieshao": "战斗开始时生命上限-50%，之后的10秒中每秒+20%的最大生命值"
+        },
+        {
+            "id":20,
+            "zbid":39,
+            "name":"痛苦共鸣",
+            "jieshao": "你每损失3%最大生命值，敌人损失1%最大生命值"
+
+        },
+        {
+            "id":21,
+            "zbid":40,
+            "name":"命定之死",
+            "jieshao": "当敌人由攻击所受的总伤害大于其最大生命值时，直接死亡。"
+
+        }
+
+
+        
+    ]
+}

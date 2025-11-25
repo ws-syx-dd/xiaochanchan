@@ -1,0 +1,36 @@
+{
+    "list": [
+        {
+            "id":0,
+            "name":"冰冻",
+            "time":"0",
+            "leixing":"0",
+            "fangshi":1,
+            "zhi":-0.05
+        },
+        {
+            "id":1,
+            "name":"禅",
+            "time":"0",
+            "leixing":"0",
+            "fangshi":1,
+            "zhi":1
+        },
+        {
+            "id":2,
+            "name":"剧毒",
+            "time":"0",
+            "leixing":"0",
+            "fangshi":1,
+            "zhi":0.015
+        },
+        {
+            "id":3,
+            "name":"燃烧",
+            "time":"0",
+            "leixing":"0",
+            "fangshi":1,
+            "zhi":0.02
+        }
+    ]
+}

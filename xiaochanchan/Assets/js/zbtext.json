@@ -1,0 +1,490 @@
+{
+    "list": [
+        {
+            "id": 0,
+            "imgwz": 0,
+            "jieshao": "大招倍率+100%",
+            "name": "能量核心",
+            "money": 5,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["dzbl"],
+            "fangshi":[2],
+            "zhi":[1]
+        },
+        {
+            "id": 1,
+            "imgwz": 1,
+            "jieshao": "每次攻击使攻击力临时+10%",
+            "name": "野兽之爪",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[3],
+            "zhi":[1]
+            
+        },
+        {
+            "id": 2,
+            "imgwz": 2,
+            "jieshao": "灼烧3",
+            "name": "永燃火把",
+            "money": 2,
+            "count":1,
+            "leixing":["buff"],
+            "fangshi":[3],
+            "zhi":[3]
+
+        },
+        {
+            "id": 3,
+            "imgwz": 3,
+            "jieshao": "冰霜10",
+            "name": "冰霜之珠",
+            "money": 2,
+            "count":1,
+            "leixing":["buff"],
+            "fangshi":[0],
+            "zhi":[10]
+        },
+        {
+            "id": 4,
+            "imgwz": 4,
+            "jieshao": "剧毒5",
+            "name": "剧毒药水",
+            "money": 2,
+            "count":1,
+            "leixing":["buff"],
+            "fangshi":[2],
+            "zhi":[5]
+        },
+        {
+            "id": 5,
+            "imgwz": 5,
+            "jieshao": "每次攻击有20%触发一道闪电",
+            "name": "真霹实雳",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[0],
+            "zhi":[1]
+            
+        },
+        {
+            "id": 6,
+            "imgwz": 6,
+            "jieshao": "每次攻击20%的概率施加一层剧毒",
+            "name": "破伤风之刃",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[1],
+            "zhi":[1]
+            
+        },
+        {
+            "id": 7,
+            "imgwz": 7,
+            "jieshao": "能量获取率+25%",
+            "name": "黑夜假面",
+            "money": 5,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["mphf"],
+            "fangshi":[2],
+            "zhi":[0.25]
+        },
+        {
+            "id": 8,
+            "imgwz": 8,
+            "jieshao": "技能所需能量-10%",
+            "name": "智慧戒指",
+            "money": 1,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["mp"],
+            "fangshi":[2],
+            "zhi":[-0.1]
+
+        },
+        {
+            "id": 9,
+            "imgwz": 9,
+            "jieshao": "大招施放后恢复20%的蓝量",
+            "name": "元素魔方",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[2],
+            "zhi":[1]
+        },
+        {
+            "id": 10,
+            "imgwz": 10,
+            "jieshao": "你的伤害增加10",
+            "name": "机械齿轮",
+            "money": 2,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["atk"],
+            "fangshi":[1],
+            "zhi":[10]
+        },
+        {
+            "id": 11,
+            "imgwz": 11,
+            "jieshao": "攻击速度+10%",
+            "name": "激励喇叭",
+            "money": 1,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["dps"],
+            "fangshi":[2],
+            "zhi":[0.1]
+        },
+        {
+            "id": 12,
+            "imgwz": 12,
+            "jieshao": "你第一次生命值归零时将调整至100%",
+            "name": "复活吧，我的爱人！",
+            "money": 10,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[22],
+            "zhi":[1]
+        },
+        {
+            "id": 13,
+            "imgwz": 13,
+            "jieshao": "消耗，获得12G",
+            "name": "璀璨宝石",
+            "money": 5,
+            "xiaohui":true,
+            "leixing": ["qita"],
+            "fangshi":[13],
+            "zhi":[12]
+            
+        },
+        {
+            "id": 14,
+            "imgwz": 14,
+            "jieshao": "消耗，血量 蓝量 攻击力 攻速 各加+10%",
+            "name": "神秘日记",
+            "money": 2,
+            "count":4,
+            "xiaohui":true,
+            "leixing":["only","only","only","only"],
+            "shuxing":["hp","mp","atk","dps"],
+            "fangshi":[2,2,2,2],
+            "zhi":[0.1,0.1,0.1,0.1]
+        },
+        {
+            "id": 15,
+            "imgwz": 15,
+            "jieshao": "固定，现在与每次胜利攻击力+30%",
+            "name": "诅咒项链",
+            "money": 3,
+            "nothuishou":true,
+            "uptiaojian":"win"
+            
+        },
+        {
+            "id": 16,
+            "imgwz": 16,
+            "jieshao": "每次攻击回复造成伤害20%的血量",
+            "name": "饮血之刃",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[9],
+            "zhi":[1]
+        },
+        {
+            "id": 17,
+            "imgwz": 17,
+            "jieshao": "胜利时获得1点悟，拥有6点悟游戏胜利。",
+            "name": "禅",
+            "money": 10,
+            "leixing":["buff"],
+            "fangshi":[1],
+            "zhi":[1]
+        },
+        {
+            "id": 18,
+            "imgwz": 18,
+            "jieshao": "生命值+100",
+            "name": "王国战旗",
+            "money": 1,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["hp"],
+            "fangshi":[1],
+            "zhi":[100]
+        },
+        {
+            "id": 19,
+            "imgwz": 19,
+            "jieshao": "每次攻击回复造成伤害20%的蓝量",
+            "name": "奥术法典",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[8],
+            "zhi":[1]
+        },
+        {
+            "id": 20,
+            "imgwz": 20,
+            "jieshao": "攻击力+50%，但每秒损失4%的最大生命值",
+            "name": "恶魔契约",
+            "money": 2,
+            "count":2,
+            "leixing":["only","every"],
+            "shuxing":["atk",null],
+            "fangshi":[2,5],
+            "zhi":[0.5,1]
+        },
+        {
+            "id": 21,
+            "imgwz": 21,
+            "jieshao": "每秒恢复3%的最大生命值",
+            "name": "红甲虫",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[6],
+            "zhi":[1]
+
+        },
+        {
+            "id": 22,
+            "imgwz": 22,
+            "jieshao": "每次攻击有30%的概率回复所有蓝量",
+            "name": "时空沙漏",
+            "money": 10,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[4],
+            "zhi":[1]
+
+
+        },
+        {
+            "id": 23,
+            "imgwz": 23,
+            "jieshao": "每次受到攻击反弹30%的伤害",
+            "name": "荆棘甲",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[7],
+            "zhi":[1]
+        },
+        {
+            "id": 24,
+            "imgwz": 24,
+            "jieshao": "受到攻击时敌人30%的概率获得2层冰霜",
+            "name": "冰霜之甲",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[5],
+            "zhi":[1]
+
+        },
+        {
+            "id": 25,
+            "imgwz": 25,
+            "jieshao": "最大蓝量+9999,攻击+60%，攻速+60%",
+            "name": "拳脚功夫",
+            "money": 5,
+            "leixing":11,
+            "fangshi":25,
+            "zhi":1,
+            "count":3,
+            "leixingfork":["hp","atk","dps"],
+            "fangshifork":[1,2,2],
+            "zhifork":[9999,0.6,0.6]
+        },
+        {
+            "id": 26,
+            "imgwz": 26,
+            "jieshao": "固定，现在与每次胜利血量-80，攻击+30%，攻速+30%",
+            "name": "灵魂石",
+            "money": 1,
+            "nothuishou":true,
+            "uptiaojian":"win",
+            "count":3,
+            "leixing":["hp","atk","dps"],
+            "fangshi":[1,2,2],
+            "zhi":[-80,0.3,0.3]
+
+        },
+        {
+            "id": 27,
+            "imgwz": 27,
+            "jieshao": "每次攻击使攻速临时+5%",
+            "name": "羊刀",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[11],
+            "zhi":[1]
+        },
+        {
+            "id": 28,
+            "imgwz": 28,
+            "jieshao": "你的攻击分裂成两次 每次为原攻击值的35%",
+            "name": "分裂箭",
+            "money": 10,
+            "count":1,
+            "leixing":["qita"],
+            "fangshi":[28],
+            "zhi":[1]
+        },
+        {
+            "id": 29,
+            "imgwz": 29,
+            "jieshao": "每次攻击,敌人-2点蓝量",
+            "name": "祛魔手套",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[12],
+            "zhi":[1]
+        },
+        {
+            "id": 30,
+            "imgwz": 30,
+            "jieshao": "攻击额外造成敌人2%最大生命值的伤害",
+            "name": "反物质核心",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[13],
+            "zhi":[1]
+
+        },
+        {
+            "id": 31,
+            "imgwz": 31,
+            "jieshao": "血量每减少10%攻击力+10%",
+            "name": "狂怒之剑",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[15],
+            "zhi":[1]
+
+
+        },
+        {
+            "id": 32,
+            "imgwz": 32,
+            "jieshao": "施放大招后恢复20%的最大生命值",
+            "name": "圣光法球",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[16],
+            "zhi":[1]
+
+        },
+        {
+            "id": 33,
+            "imgwz": 33,
+            "jieshao": "攻击力+15%",
+            "name":"强化药剂",
+            "money": 1,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["atk"],
+            "fangshi":[2],
+            "zhi":[0.15]
+
+
+        },
+        {
+            "id": 34,
+            "imgwz": 34,
+            "jieshao": "消耗，40%/10%的概率获得2/3金币",
+            "name":"赌博",
+            "money": 1,
+            "count":1,
+            "xiaohui":true,
+            "leixing":["qita"],
+            "fangshi":[34]
+
+        },
+        {
+            "id": 35,
+            "imgwz": 35,
+            "jieshao": "每次攻击10%获得2秒鼓舞buff",
+            "name":"残破号角",
+            "money": 1,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[17],
+            "zhi":[1]
+
+        },
+        {
+            "id": 36,
+            "imgwz": 36,
+            "jieshao": "生命值+200，攻速-4%，攻击力-6%",
+            "name":"重甲",
+            "money": 1,
+            "count":3,
+            "leixing":["only","only","only"],
+            "shuxing":["hp","dps","atk"],
+            "fangshi":[1,2,2],
+            "zhi":[200,0.04,0.06]
+        },
+        {
+            "id": 37,
+            "imgwz": 37,
+            "jieshao": "每第4次受击时，对敌人造成50点伤害",
+            "name":"反击螺旋",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[18],
+            "zhi":[1]
+        },
+        {
+            "id": 38,
+            "imgwz": 38,
+            "jieshao": "战斗开始时生命上限-50%，之后的10秒中每秒+20%的最大生命值。",
+            "name":"支援未来",
+            "money": 5,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[19],
+            "zhi":[1]
+        },
+        {
+            "id": 39,
+            "imgwz": 39,
+            "jieshao": "你每损失1%最大生命值，敌人损失0.3%最大生命值",
+            "name":"痛苦共鸣",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[20],
+            "zhi":[1]
+
+        },
+        {
+            "id": 40,
+            "imgwz": 40,
+            "jieshao": "当敌人由攻击所受的总伤害大于其最大生命值时，直接死亡。",
+            "name":"命定之死",
+            "money": 10,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[21],
+            "zhi":[1]
+        }
+        
+    ]
+}

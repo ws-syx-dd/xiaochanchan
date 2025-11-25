@@ -1,0 +1,37 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro;
+using UnityEngine;
+
+public class mymp: MonoBehaviour
+{
+    // Start is called before the first frame update
+    public static TextMeshProUGUI mptext;
+    public static float mpmax;
+    public static float mp;
+    private RectTransform mpimage;
+    void Start()
+    {
+        mpupdata();
+        mptext = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        mpimage = transform.GetChild(1).GetComponent<RectTransform>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        mptext.text = mp + "/" + mpmax;
+        Vector3 ls = mpimage.localScale;
+        mpimage.localScale = new Vector3(Mathf.Clamp((mp / mpmax), 0, 1), ls.y, ls.z);
+    }
+    public static void mpupdata()
+    {
+        mpmax=(sxchushi.mysxchishu.mp+sxchushi.mysx1.mp+sxchushi.mylssx1.mp)*(sxchushi.mysx2.mp+sxchushi.mylssx2.mp);
+        mpmax =((float) Mathf.Round(mpmax));
+        mp = 0;
+        Debug.Log("mymp:" + mpmax);
+    }
+}
