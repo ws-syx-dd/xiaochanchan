@@ -70,119 +70,7 @@ public class zhuangbeichi: MonoBehaviour
         }
         field.SetValue(ls, (float)field.GetValue(ls) + zhi);
     }
-    //public static float fightersx(string shuxing,int duixiang,string fangshi,float zhisum,float zhiadd=0)
-    //{
-    //    switch (shuxing, duixiang)//shuxing为属性 对象==0指自己 对象==1指敌人
-    //    {
-    //        case ("hp", 0):
-    //            if (fangshi == "+") myhp.hp += zhisum;
-    //            else myhp.hp += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
-    //            myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
-    //            break;
-    //        case ("hp", 1):
-    //            if (fangshi == "+")
-    //            {
-    //                drhp.hp += zhisum;
-    //                zhiadd = zhisum;
-    //            }
-    //            else
-    //            {
-    //                drhp.hp += drhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
-    //                zhiadd = drhp.hpmax * zhisum;
-    //            }
-    //            drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
-    //            break;
-    //        case ("mp", 0):
-    //            if (fangshi == "+") mymp.mp += zhisum;
-    //            else mymp.mp += mymp.mpmax * zhisum;
-    //            break;
-    //        case ("mp", 1):
-    //            if (fangshi == "+") drmp.mp += zhisum;
-    //            else drmp.mp += drmp.mpmax * zhisum;
-    //            break;
-    //        case ("atk", 0):
-    //            if (fangshi == "+") sxchushi.mylssx1.atk += zhisum;
-    //            else sxchushi.mylssx2.atk += zhisum;
-    //            myfighter.atkupdata();
-    //            break;
-    //        case ("dps", 0):
-    //            if (fangshi == "+") sxchushi.mylssx1.dps += zhisum;
-    //            else sxchushi.mylssx2.dps += zhisum;
-    //            myfighter.dpsupdata();
-    //            break;
-
-    //        case ("du", 1):
-    //            if (fangshi == "+") buff(0, 2, zhisum);
-    //            break;
-    //        case ("bingshuang", 1):
-    //            if (fangshi == "+") buff(0, 0, zhisum);
-    //            break;
-
-    //    }
-    //    return zhiadd;
-    //}
-    //public static void buff(int duixiang,int fangshi,float zhi)
-    //{
-    //    if (duixiang == 0)
-    //    {
-    //        if (!drbuff.buffzhi.ContainsKey(fangshi))
-    //        {   
-    //            drbuff.buffzhi.Add(fangshi, zhi);
-    //            drbuff.buffimage[drbuff.buffzhi.Count-1].gameObject.SetActive(true);
-    //            drbuff.buffimage[drbuff.buffzhi.Count -1].sprite = buffdr.buffimg[fangshi];
-    //            drbuff.bufftext[drbuff.buffzhi.Count - 1].text =zhi.ToSafeString();
-    //        }
-    //        else
-    //        {
-    //            drbuff.buffzhi[fangshi] = drbuff.buffzhi[fangshi] + zhi;
-    //        }
-    //        switch (fangshi)
-    //        {
-    //            case 0:
-    //                drbuff.bingdong(buffdr.buff[fangshi].zhi * drbuff.buffzhi[fangshi]);
-    //                break;
-
-    //        }
-    //        buffdelete(fangshi);
-
-    //    }
-    //}
-    //public static void buffdelete(int fangshi)
-    //{
-    //    if (drbuff.buffzhi[fangshi]<=0)
-    //    {
-    //        drbuff.buffimage[drbuff.buffzhi.Count - 1].gameObject.SetActive(false);
-    //        drbuff.buffzhi.Remove(fangshi);
-    //    }
-        
-    //}
-    //public static void buffreset()
-    //{   
-    //    drbuff.buffzhi.Clear();
-
-    //    for (int i = 0; i < 8; i++)
-    //    {
-    //        //Debug.Log(drbuff.buffimage[i].name);
-    //        drbuff.buffimage[i].gameObject.SetActive(false);
-    //    }
-    //    foreach (var item in zblan.zbl)
-    //    {
-    //        if (item >= 0)
-    //        {
-    //            zb ls = zbdr.zb[item];
-
-    //            for(int j = 0; j < ls.count; j++)
-    //            {
-    //                if (ls.leixing[j]=="buff")//重新添加buff 如每次战斗结束后剧毒药水的剧毒3
-    //                {
-    //                    buffchi.chi.buff(0, ls.fangshi[j], ls.zhi[j]);
-    //                }
-    //            }
-                
-    //        }
-    //    }
-       
-    //}
+   
     public static float gailvcount(int key,int value)//只计算成功多少次
     {
         var ls = everyjs.every[key];
@@ -207,21 +95,7 @@ public class zhuangbeichi: MonoBehaviour
         Debug.Log(ls.name + "触发了:" + jieguo);
         return jieguo;
     }
-    //public static float everyshixian(int id,float count,float zishiying=0)//every中的内容实现 zishiying为调用every产生的值 如hit中的受到伤害 atk中的造成伤害
-    //{
-    //    every ls = everyjs.every[id];
-    //    float zhisum;
-    //    float zhiadd=0;
-    //    if(!ls.auto)zhisum=count*ls.zhi;
-    //    else
-    //    {
-    //        if(ls.autofangshi=="+")zhisum=count*(ls.zhi+zishiying);
-    //        else zhisum=count*ls.zhi*zishiying;
-    //    }
-    //    zhiadd =everychi.chi.fightersx(ls.shuxing, ls.duixiang, ls.leixing,zhisum,zhiadd);
-    //    Debug.Log(zhiadd);
-    //    return zhiadd ;
-    //}
+
     public static void qitaxiaoguo(int fangshi,int zhi=1)
     {
         switch (fangshi)

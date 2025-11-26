@@ -8,12 +8,16 @@ public class myheart : MonoBehaviour
     public static int heartcount = 0;
     // Start is called before the first frame update
     void Start()
-    {
-       foreach(Transform i in transform)
+    {   
+        if(heart.Count == 0)
         {
-            Debug.Log(i.name);
-            heart.Add(i.gameObject);
+            foreach(Transform i in transform)
+            {
+                Debug.Log(i.name);
+                heart.Add(i.gameObject);
+            }
         }
+       
        heartcount=heart.Count;
     }
 

@@ -33,9 +33,9 @@ public class everyjs : MonoBehaviour
      void Start()
     {
         
-        string filepath = Application.dataPath + "/js/everytext.json";
-        string ls = File.ReadAllText(filepath);
-        every= JsonUtility.FromJson<everylist>(ls).list;
+
+        TextAsset ls = Resources.Load<TextAsset>("js/everytext");
+        every = JsonUtility.FromJson<everylist>(ls.text).list;
     }
 
     // Update is called once per frame

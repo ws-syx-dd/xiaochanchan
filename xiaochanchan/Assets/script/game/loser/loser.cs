@@ -27,23 +27,29 @@ public class loser : MonoBehaviour
     private TextMeshProUGUI ZJsumcount;//总计
     [SerializeField]
     private TextMeshProUGUI mojingsum;
-    
     // Start is called before the first frame update
     void Start()
-    {
-        string filepath = Application.dataPath+ "/js/cundang.json";
-        string ls = File.ReadAllText(filepath);
-        cundangjs.cundang = JsonUtility.FromJson<cundangjs.cundangclass>(ls);
-        shengyumoney = moneyscript.money;
-       WenBenUpdata(); 
+    {   
+        string wenbenpath = Path.Combine(Application.persistentDataPath, "cundang.json");//目前问题为 存档分为两份 一份为不可更改的读取可用人物 一份为可更改的魔晶与记录的存储 还没做完人物的解锁 暂时搁置
+        if (!File.Exists(wenbenpath))
+        {
+            TextAsset ls = Resources.Load<TextAsset>("js/cundang");
+            cundangjs.cundang = JsonUtility.FromJson<cundangjs.cundangclass>(ls.text);
+
+        }
+        else
+        {
+            string wenben = File.ReadAllText(wenbenpath);
+            Debug.Log(Application.persistentDataPath);
+            cundangjs.cundang = JsonUtility.FromJson<cundangjs.cundangclass>(wenben);
+        }
+
         
+        
+        shengyumoney = moneyscript.money;
+        WenBenUpdata();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void again()
     {
         for (int i = 0; i < 8; i++)
@@ -69,11 +75,9 @@ public class loser : MonoBehaviour
         SYMsum.text = $"{shengyumoney * 2}";
         ZJsumcount.text = $"{cengshu * 10 + shengyumoney * 2}";
         mojingsum.text = $"魔晶：({mojing}+{cengshu * 10 + shengyumoney * 2})={mojing + cengshu * 10 + shengyumoney * 2}";
-        mojing += cengshu * 10 + shengyumoney * 2;
-        if(cengshu>maxcenshu)maxcenshu = cengshu;
+        cundangjs.cundang.mojing += cengshu * 10 + shengyumoney * 2;
+        if(cengshu>maxcenshu) cundangjs.cundang.maxcengshu = cengshu;
         string updata=JsonUtility.ToJson(cundangjs.cundang);
-        string filepath = Application.dataPath+"/js/cundang.json";
-        File.WriteAllText( filepath,updata);
-
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "cundang.json"), updata);
     }
 }

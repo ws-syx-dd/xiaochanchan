@@ -22,10 +22,9 @@ public class buffjs : MonoBehaviour
     void Start()
     {
 
-        string filepath = Application.dataPath + "/js/bufftext.json";
-        string ls = File.ReadAllText(filepath);
-        
-        buffdr.buff=JsonUtility.FromJson<bufflist>(ls).list;
+
+        TextAsset ls= Resources.Load<TextAsset>("js/bufftext");
+        buffdr.buff=JsonUtility.FromJson<bufflist>(ls.text).list;
 
     }
 

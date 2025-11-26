@@ -244,6 +244,7 @@ public class myfighter : MonoBehaviour
         else
         {
             loserjiesuan();
+
             
         }
     }
@@ -253,9 +254,11 @@ public class myfighter : MonoBehaviour
     }
     public void loserjiesuan()
     {
-        myheart.heart[myheart.heartcount-1].gameObject.SetActive(false);
+        Debug.Log("失败结算 heartcount:"+myheart.heartcount);
+
+        //myheart.heart[myheart.heartcount-1].gameObject.SetActive(false);
         myheart.heartcount--;
-        if(myheart.heartcount == 0)
+        if(myheart.heartcount <= 0)
         {
             sxchushi.chushihua();//将所有属性初始化
             zbxiaohui.allxiaohui();//全部装备销毁

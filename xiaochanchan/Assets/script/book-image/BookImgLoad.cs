@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
-using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -38,9 +36,8 @@ public class BookImgLoad : MonoBehaviour
             anniu[i].GetComponent<Button>().onClick.AddListener(() => qiehuan(index));
 
          }
-        string filepath = Application.dataPath + "/js/zbtext.json";
-        string ls = File.ReadAllText(filepath);
-        zbdr.zb = JsonUtility.FromJson<zblist>(ls).list;
+        TextAsset ls=Resources.Load<TextAsset>("js/zbtext");
+        zbdr.zb = JsonUtility.FromJson<zblist>(ls.text).list;
         Sprite[] lsimg = Resources.LoadAll<Sprite>("img/zb");
         List<Sprite> sprites = new List<Sprite>(lsimg);
         zbdr.zbimgall = sprites;

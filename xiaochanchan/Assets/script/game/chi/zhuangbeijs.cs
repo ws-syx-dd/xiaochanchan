@@ -32,9 +32,8 @@ public class zhuangbeijs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        string filepath = Application.dataPath + "/js/zbtext.json";
-        string ls = File.ReadAllText(filepath);
-        zbdr.zb=JsonUtility.FromJson<zblist>(ls).list;
+        TextAsset ls = Resources.Load<TextAsset>("js/zbtext");
+        zbdr.zb=JsonUtility.FromJson<zblist>(ls.text).list;
     }
 
     // Update is called once per frame

@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/loser.unity
     guid: ef998fd7490ed8249805829d6240cb90
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/duoren/playerfighter.unity
     guid: dea75321f35e3614b80a65d12f84dfdd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/duoren/fangjian.unity
     guid: 738295cce3cc6fd4490cfa44b4d9ea09
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/duoren/zdzhunbei.unity
     guid: a37b36dc0b4227045b725e7cfabd3704
   - enabled: 1
