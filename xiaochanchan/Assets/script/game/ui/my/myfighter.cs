@@ -189,11 +189,15 @@ public class myfighter : MonoBehaviour
     }
     public void everytime()
     {
-       foreach (var i in everytimemap)
+        if (myfighter.fighter && drfighter.fighter)
         {
-            everychi.chi.everyshixian(i.Key, zhuangbeichi.gailvcount(i.Key, i.Value));
+            foreach (var i in everytimemap)
+            {
+                everychi.chi.everyshixian(i.Key, zhuangbeichi.gailvcount(i.Key, i.Value));
+            }
+            if (myfighter.fighter && drfighter.fighter) Invoke("everytime", 1f);
         }
-        if (myfighter.fighter && drfighter.fighter) Invoke("everytime", 1f);
+       
         else Debug.Log("my-everytime end");
 
     }
