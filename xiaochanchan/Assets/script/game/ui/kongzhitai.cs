@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -8,18 +10,20 @@ using UnityEngine.UI;
 public class kongzhitai : MonoBehaviour
 {
     public TextMeshProUGUI text1;
-    public TextMeshProUGUI text2;
     // Start is called before the first frame update
     public void cilck()
     {
 
-        if (text1.text!=""&&text2.text!="") 
+        if (text1.text!="") 
            {
             try 
             {
-                int index1 = int.Parse(text1.text.Substring(0, text1.text.Length - 1));//对象
-                int index2 = int.Parse(text2.text.Substring(0, text2.text.Length - 1));//装备序号
-                zhuangbeiadd(index1, index2);
+                string[] lstext = text1.text.Substring(0, text1.text.Length - 1).Split("-");
+                int index1=0;
+                int index2 = int.Parse(lstext[2]);
+                if (lstext[0] == "he") index1 = 1;
+                if (lstext[1] == "zb") zhuangbeiadd(index1, index2);
+                else if (lstext[1] != "zbl") shuxiangtiaozheng(index1, lstext[1], index2);
             }
             catch
             {
@@ -79,5 +83,23 @@ public class kongzhitai : MonoBehaviour
                 }
             }
         }
+    }
+    public void shuxiangtiaozheng(int duixiang,string shuxing,int zhi)//对基础属性进行调整
+    {
+        FieldInfo field = typeof(sxchushi.shuxing).GetField(shuxing);//反射直接获取目标属性下的值 等同于 sxchushi.shuxing.leixing
+        sxchushi.shuxing ls = new sxchushi.shuxing();
+        switch (duixiang)
+        {
+            case (0):
+                ls = sxchushi.mysxchishu;
+                break;
+            case (1):
+                ls = sxchushi.drsxchishu;
+                break;
+
+        }
+        field.SetValue(ls,zhi);
+        drfighter.allupdata();
+        myfighter.allupdata();
     }
 }

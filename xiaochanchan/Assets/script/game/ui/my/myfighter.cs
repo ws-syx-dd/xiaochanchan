@@ -141,7 +141,6 @@ public class myfighter : MonoBehaviour
         float chengzhi = sxchushi.mysx2.atk + sxchushi.mylssx2.atk;
         atk = (chushi +jiazhi) * (chengzhi);
         atkcount++;
-        Debug.Log("当前攻击次数:" + atkcount);
         mysxtext.atktext(chushi,jiazhi,chengzhi,atk);
     }
     public static void dpsupdata()
@@ -169,7 +168,9 @@ public class myfighter : MonoBehaviour
         mysxtext.mphftext(chushi, jiazhi, chengzhi, mphf);
     }
     public static void allupdata()
-    {
+    {   
+        myhp.hpupdata();
+        mymp.mpupdata();
         atkupdata();
         dpsupdata();
         dzblupdata();

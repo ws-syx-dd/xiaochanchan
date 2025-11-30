@@ -31,7 +31,7 @@ public class loser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string filepath = Application.dataPath+ "/js/cundang.json";
+        string filepath = Path.Combine(Application.persistentDataPath, "cundang.json");
         string ls = File.ReadAllText(filepath);
         cundangjs.cundang = JsonUtility.FromJson<cundangjs.cundangclass>(ls);
         shengyumoney = moneyscript.money;
@@ -69,10 +69,10 @@ public class loser : MonoBehaviour
         SYMsum.text = $"{shengyumoney * 2}";
         ZJsumcount.text = $"{cengshu * 10 + shengyumoney * 2}";
         mojingsum.text = $"Ä§¾§£º({mojing}+{cengshu * 10 + shengyumoney * 2})={mojing + cengshu * 10 + shengyumoney * 2}";
-        mojing += cengshu * 10 + shengyumoney * 2;
-        if(cengshu>maxcenshu)maxcenshu = cengshu;
+        cundangjs.cundang.mojing += cengshu * 10 + shengyumoney * 2;
+        if(cengshu>maxcenshu) cundangjs.cundang.maxcengshu = cengshu;
         string updata=JsonUtility.ToJson(cundangjs.cundang);
-        string filepath = Application.dataPath+"/js/cundang.json";
+        string filepath = Path.Combine(Application.persistentDataPath, "cundang.json");
         File.WriteAllText( filepath,updata);
 
     }

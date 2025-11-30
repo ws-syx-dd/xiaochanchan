@@ -33,11 +33,11 @@ public class renwujs : MonoBehaviour
         string filepath = Application.dataPath + "/js/rwtext.json";
         string ls = File.ReadAllText(filepath);
         rw= JsonUtility.FromJson<rwlist>(ls).list;
-        if (rw == null)
-        {
-            TextAsset lstext = Resources.Load<TextAsset>("js/rwtext");
-            rw = JsonUtility.FromJson<rwlist>(lstext.text).list;
-        }
+        //if (rw == null)
+        //{
+        //    TextAsset lstext = Resources.Load<TextAsset>("js/rwtext");
+        //    rw = JsonUtility.FromJson<rwlist>(lstext.text).list;
+        //}
 
     }
 

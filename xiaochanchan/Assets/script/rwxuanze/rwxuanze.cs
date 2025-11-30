@@ -20,7 +20,7 @@ public class rwxuanze : MonoBehaviour
     {   
         Image.gameObject.SetActive(false);
         rwxz.SetActive(false);
-        string filepath = Application.dataPath + "/js/cundang.json";
+        string filepath = Path.Combine(Application.persistentDataPath, "cundang.json");
         string ls = File.ReadAllText(filepath);
         cundangjs.cundang = JsonUtility.FromJson<cundangjs.cundangclass>(ls);
         foreach(Transform t in pr)
