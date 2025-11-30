@@ -11,7 +11,6 @@ using UnityEngine.UI;
 public class myfighter : MonoBehaviour
 {
     public static myfighter ismyfighter;
-    // Start is called before the first frame update
     public static float atk;//攻击力 
     public static float dps;//攻速 1秒x次攻击
     public static float dzbl;//大招倍率
@@ -30,6 +29,7 @@ public class myfighter : MonoBehaviour
     public Action everyatkAction;
     public static int neardeathcount = 0;//濒死次数
     public static int hitcount = 0;//受击次数
+    public static int atkcount = 0;//攻击次数
     public  float harmsum = 0;//伤害总量
     public static Animator donghua;
     public GameObject shoujidr;
@@ -132,7 +132,7 @@ public class myfighter : MonoBehaviour
         {
             fighter = false;
         }
-    }
+     }
     
     public static void atkupdata()//这四条updata调用会比较多就不用反射了
     {
@@ -140,6 +140,8 @@ public class myfighter : MonoBehaviour
         float jiazhi = sxchushi.mysx1.atk + sxchushi.mylssx1.atk;
         float chengzhi = sxchushi.mysx2.atk + sxchushi.mylssx2.atk;
         atk = (chushi +jiazhi) * (chengzhi);
+        atkcount++;
+        Debug.Log("当前攻击次数:" + atkcount);
         mysxtext.atktext(chushi,jiazhi,chengzhi,atk);
     }
     public static void dpsupdata()
@@ -265,7 +267,6 @@ public class myfighter : MonoBehaviour
             mymp.mpupdata();
             drhp.hpupdata();
             drmp.mpupdata();
-            drfighter.bocistart();
             fighteranniu.xydlv = 1;
             dranimator.animatorupdata();
             //for (int i = 0; i < 8; i++)

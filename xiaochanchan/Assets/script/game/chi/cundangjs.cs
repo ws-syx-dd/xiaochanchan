@@ -9,6 +9,7 @@ public class cundangjs : MonoBehaviour
         public int maxcengshu;
         public int mojing;
         public bool[] renwujiesuo;
+        public int[] citiaocout;
     }
     public static cundangclass cundang = new cundangclass();
     // Start is called before the first frame update

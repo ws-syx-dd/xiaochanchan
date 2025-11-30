@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,10 +9,11 @@ public class zbxiaohui : MonoBehaviour
 {
     // Start is called before the first frame update
     public int xh;
+    public int index;
     public GameObject zbtext;
     void Start()
     {
-        gameObject.GetComponent<Button>().onClick.AddListener(() => xiaohui());
+        gameObject.GetComponent<Button>()?.onClick.AddListener(() => xiaohui());
         zbtext.SetActive(false);
     }
 
@@ -51,8 +53,10 @@ public class zbxiaohui : MonoBehaviour
         an.SetBool("xiaohui",false);
     }
     public void xianshi()//zbtextœ‘ æ
-    {
-        if (zblan.zbl[xh]>=0)zbtext.SetActive(true);
+    {   
+        if(index==0&&zblan.zbl[xh]>=0)zbtext.SetActive(true);
+        else if (index == 1 && zblan.Drzbl[xh]>=0) zbtext.SetActive(true);
+
     }
     public void xiaoshi()//zbtextœ˚ ß
     {

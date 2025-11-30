@@ -41,13 +41,13 @@
             "id":3,
             "zbid":1,
             "name":"野兽之爪",
-            "jianjie":"每次攻击使攻击力临时+10%",
+            "jianjie":"每次攻击使攻击力临时+3%",
             "leixing":"everyatk",
             "duixiang":0,
             "shuxing":"atk",
             "fangshi":"*",
             "gailv":0,
-            "zhi":0.1
+            "zhi":0.03
 
         },
         {
@@ -147,13 +147,13 @@
             "id":11,
             "zbid":18,
             "name":"羊刀",
-            "jianjie":"每次攻击使攻速临时+5%",
+            "jianjie":"每次攻击使攻速临时+2%",
             "leixing":"everyatk",
             "duixiang":0,
             "shuxing":"dps",
             "fangshi":"*",
             "gailv":0,
-            "zhi":0.05
+            "zhi":0.02
         },
         {
             "id":12,

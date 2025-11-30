@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tujian.unity
     guid: a28c229703386b7488cb1cb7c06d7345
+  - enabled: 1
+    path: Assets/Scenes/home.unity
+    guid: 36ee19e4cfc0b8443aa33a9e82179a03
   m_configObjects: {}

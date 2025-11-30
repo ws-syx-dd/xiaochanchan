@@ -28,7 +28,7 @@ public class everychi : MonoBehaviour
         ZBFunction.Add(21,every21);
         ZBFunction.Add(22,every22);
     }
-    public void EveryInOrOut(zb zb,int index, int inorout, int level = 1)
+    public void EveryInOrOut(int duixiang,zb zb,int index, int inorout, int level = 1)
     {
         int fangshi = zb.fangshi[index];
         Debug.Log(zb.id + " " + zb.fangshi[index]);
@@ -40,22 +40,27 @@ public class everychi : MonoBehaviour
             if (inorout >= 1)
             {
 
-                myfighter.ismyfighter.AllEveryAction[ls.leixing] += chi.ZBFunction[ls.id];
+                if(duixiang==0)myfighter.ismyfighter.AllEveryAction[ls.leixing] += chi.ZBFunction[ls.id];
+                else drfighter.isdrfighter.AllEveryAction[ls.leixing] += chi.ZBFunction[ls.id];
                 Debug.Log("已添加方法"+ ls.id+"至"+ ls.leixing);
             }
             else
             {
-                myfighter.ismyfighter.AllEveryAction[ls.leixing] -= chi.ZBFunction[ls.id];
+                if(duixiang==0)myfighter.ismyfighter.AllEveryAction[ls.leixing] -= chi.ZBFunction[ls.id];
+                else drfighter.isdrfighter.AllEveryAction[ls.leixing] -= chi.ZBFunction[ls.id];
                 Debug.Log("已移除方法" + ls.id);
             }
         }
         else if(ls.Action==false)
         {
             Debug.Log((ls.leixing + "map"));
-            FieldInfo fieldInfo = typeof(myfighter).GetField((ls.leixing + "map"));
+            FieldInfo fieldInfo=null;
+            if (duixiang == 0) fieldInfo = typeof(myfighter).GetField((ls.leixing + "map"));
+            else fieldInfo = typeof(drfighter).GetField((ls.leixing + "map"));
             Dictionary<int, int> ls1 = (Dictionary<int, int>)fieldInfo.GetValue(fieldInfo);
-            Debug.Log("(int)zb.zhi[i]*level * inorout:" + (int)zb.zhi[index] * level * inorout); 
             int zhi = (int)zb.zhi[index] * level * inorout;
+            Debug.Log("(int)zb.zhi[i]*level * inorout:" + zhi); 
+            
             if (!ls1.ContainsKey(fangshi))
             {
                 ls1.Add(fangshi, zhi);
@@ -69,7 +74,7 @@ public class everychi : MonoBehaviour
         }
         
     }
-    public  float everyshixian(int id, float count=1, float zishiying = 0)//every中的内容实现 zishiying为调用every产生的值 如hit中的受到伤害 atk中的造成伤害
+    public  float everyshixian(int id, float count=1, float zishiying = 0,int chufazhe=0)//every中的内容实现 zishiying为调用every产生的值 如hit中的受到伤害 atk中的造成伤害 chufazhe为触发此方法的人 0为玩家 1为敌人
     {
         every ls = everyjs.every[id];
         float zhisum;
@@ -81,59 +86,111 @@ public class everychi : MonoBehaviour
             else zhisum = count * ls.zhi * zishiying;
         }
         Debug.Log($"zhisun:{zhisum}");
-        zhiadd = fightersx(ls.shuxing, ls.duixiang, ls.fangshi, zhisum, zhiadd);
+        zhiadd = fightersx(ls.shuxing, ls.duixiang, ls.fangshi, zhisum, zhiadd,chufazhe);
         //Debug.Log(zhiadd);
         return zhiadd;
     }
-    public  float fightersx(string shuxing, int duixiang, string fangshi, float zhisum, float zhiadd = 0)
+    public  float fightersx(string shuxing, int duixiang, string fangshi, float zhisum, float zhiadd = 0,int chufazhe=0)//chufazhe为触发此方法的人 0为玩家 1为敌人
     {
-        switch (shuxing, duixiang)//shuxing为属性 对象==0指自己 对象==1指敌人
+        if (chufazhe == 0)
         {
-            case ("hp", 0):
-                if (fangshi == "+") myhp.hp += zhisum;
-                else myhp.hp += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
-                myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
-                break;
-            case ("hp", 1):
-                if (fangshi == "+")
+            switch (shuxing, duixiang)//shuxing为属性 对象==0指自己 对象==1指敌人
                 {
-                    drhp.hp += zhisum;
-                    zhiadd = zhisum;
-                }
-                else
-                {
-                    drhp.hp += drhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
-                    zhiadd = drhp.hpmax * zhisum;
-                }
-                drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
-                break;
-            case ("mp", 0):
-                if (fangshi == "+") mymp.mp += zhisum;
-                else mymp.mp += mymp.mpmax * zhisum;
-                break;
-            case ("mp", 1):
-                if (fangshi == "+") drmp.mp += zhisum;
-                else drmp.mp += drmp.mpmax * zhisum;
-                break;
-            case ("atk", 0):
-                if (fangshi == "+") sxchushi.mylssx1.atk += zhisum;
-                else sxchushi.mylssx2.atk += zhisum;
-                myfighter.atkupdata();
-                break;
-            case ("dps", 0):
-                if (fangshi == "+") sxchushi.mylssx1.dps += zhisum;
-                else sxchushi.mylssx2.dps += zhisum;
-                myfighter.dpsupdata();
-                break;
+                case ("hp", 0):
+                    if (fangshi == "+") myhp.hp += zhisum;
+                    else myhp.hp += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                    myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
+                    break;
+                case ("hp", 1):
+                    if (fangshi == "+")
+                    {
+                        drhp.hp += zhisum;
+                        zhiadd = zhisum;
+                    }
+                    else
+                    {
+                        drhp.hp += drhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                        zhiadd = drhp.hpmax * zhisum;
+                    }
+                    drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
+                    break;
+                case ("mp", 0):
+                    if (fangshi == "+") mymp.mp += zhisum;
+                    else mymp.mp += mymp.mpmax * zhisum;
+                    break;
+                case ("mp", 1):
+                    if (fangshi == "+") drmp.mp += zhisum;
+                    else drmp.mp += drmp.mpmax * zhisum;
+                    break;
+                case ("atk", 0):
+                    if (fangshi == "+") sxchushi.mylssx1.atk += zhisum;
+                    else sxchushi.mylssx2.atk += zhisum;
+                    myfighter.atkupdata();
+                    break;
+                case ("dps", 0):
+                    if (fangshi == "+") sxchushi.mylssx1.dps += zhisum;
+                    else sxchushi.mylssx2.dps += zhisum;
+                    myfighter.dpsupdata();
+                    break;
 
-            case ("du", 1):
-                if (fangshi == "+") buffchi.chi.buff(0, 2, zhisum);
-                break;
-            case ("bingshuang", 1):
-                if (fangshi == "+") buffchi.chi.buff(0, 0, zhisum);
-                break;
-
+                case ("du", 1):
+                    if (fangshi == "+") buffchi.chi.buff(0, 2, zhisum);
+                    break;
+                case ("bingshuang", 1):
+                    if (fangshi == "+") buffchi.chi.buff(0, 0, zhisum);
+                    break;
+                }
         }
+        else
+        {
+            switch (shuxing, duixiang)//shuxing为属性 对象==0指自己 对象==1指敌人
+            {
+                case ("hp", 0):
+                    if (fangshi == "+") drhp.hp += zhisum;
+                    else drhp.hp += drhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                    drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
+                    break;
+                case ("hp", 1):
+                    if (fangshi == "+")
+                    {
+                        myhp.hp += zhisum;
+                        zhiadd = zhisum;
+                    }
+                    else
+                    {
+                        myhp.hp += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                        zhiadd = myhp.hpmax * zhisum;
+                    }
+                    myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
+                    break;
+                case ("mp", 0):
+                    if (fangshi == "+") drmp.mp += zhisum;
+                    else drmp.mp += drmp.mpmax * zhisum;
+                    break;
+                case ("mp", 1):
+                    if (fangshi == "+") mymp.mp += zhisum;
+                    else mymp.mp += mymp.mpmax * zhisum;
+                    break;
+                case ("atk", 0):
+                    if (fangshi == "+") sxchushi.drlssx1.atk += zhisum;
+                    else sxchushi.drlssx2.atk += zhisum;
+                    drfighter.atkupdata();
+                    break;
+                case ("dps", 0):
+                    if (fangshi == "+") sxchushi.drlssx1.dps += zhisum;
+                    else sxchushi.drlssx2.dps += zhisum;
+                    drfighter.dpsupdata();
+                    break;
+
+                case ("du", 1):
+                    if (fangshi == "+") buffchi.chi.buff(1, 2, zhisum);
+                    break;
+                case ("bingshuang", 1):
+                    if (fangshi == "+") buffchi.chi.buff(1, 0, zhisum);
+                    break;
+            }
+        }
+        
         return zhiadd;
     }
     public void every18()

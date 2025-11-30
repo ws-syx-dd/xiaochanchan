@@ -10,7 +10,7 @@ public class buffchi : MonoBehaviour
     {
         if(chi == null)chi=this;
     }
-    public void buff(int duixiang, int fangshi, float zhi)
+    public void buff(int duixiang, int fangshi, float zhi)//目前buff之做了敌人方面的 玩家的等后续更改
     {
         if (duixiang == 0)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class rw
 {
-    public int id;
+    public int id=0;
     public string name;
     public float hp;
     public float mp;
@@ -29,9 +29,18 @@ public class renwujs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         string filepath = Application.dataPath + "/js/rwtext.json";
         string ls = File.ReadAllText(filepath);
         rw= JsonUtility.FromJson<rwlist>(ls).list;
+=======
+        if (rw == null)
+        {
+            TextAsset ls = Resources.Load<TextAsset>("js/rwtext");
+            rw = JsonUtility.FromJson<rwlist>(ls.text).list;
+        }
+        
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame

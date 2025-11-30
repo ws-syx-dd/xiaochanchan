@@ -46,6 +46,7 @@ public class rwtitle : MonoBehaviour
     public void fanhui()
     {
         if (gameObject.activeSelf) gameObject.SetActive(false);
+        else if(gameObject.transform.parent.name=="gonggaofunction")gameObject.transform.parent.gameObject.SetActive(false);
         else SceneManager.LoadScene("strat");
     }
         

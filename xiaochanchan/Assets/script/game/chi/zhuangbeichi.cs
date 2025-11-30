@@ -38,7 +38,7 @@ public class zhuangbeichi: MonoBehaviour
             }
             else if (zb.leixing[i] == "every")
             {
-                everychi.chi.EveryInOrOut(zb, i, inorout, level);
+                everychi.chi.EveryInOrOut(duixiang,zb, i, inorout, level);
             }
             else if (zb.leixing[i] == "qita")
             {

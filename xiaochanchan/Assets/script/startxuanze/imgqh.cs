@@ -37,4 +37,8 @@ public class imgqh : MonoBehaviour
     {
         SceneManager.LoadScene("tujian");
     }
+    public void gohome()
+    {
+        SceneManager.LoadScene("home");
+    }
 }

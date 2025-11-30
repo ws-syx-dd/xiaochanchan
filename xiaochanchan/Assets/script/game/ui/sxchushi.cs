@@ -14,7 +14,7 @@ public class sxchushi : MonoBehaviour
         public float dzbl;
         public float mphf;
     }
-    public static int myid;
+    public static int myid=0;
     public static shuxing mysxchishu=new shuxing();
     public static shuxing mysx1 = new shuxing();//1代表加减
     public static shuxing mysx2 = new shuxing();//2代表乘除

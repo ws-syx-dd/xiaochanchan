@@ -21,7 +21,7 @@ public class beidongchi : MonoBehaviour
         switch (i)
         {
             case 0:
-                //暂时没做
+                //第一次濒死时恢复25%的血量
                  Action beidonghuifu= () =>
                 {
                     if (myfighter.neardeathcount == 1)

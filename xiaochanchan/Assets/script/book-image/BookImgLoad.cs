@@ -140,7 +140,7 @@ public class BookImgLoad : MonoBehaviour
         conut = zhuangbei[index].Count;
         pianyiy = 1;
         RectTransform rectTransform = GetComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(10, (4 *(conut + 2)/3)-1f);
+        rectTransform.sizeDelta = new Vector2(10, (4 *(conut + 2)/3));
         ImgSize = card.GetComponent<RectTransform>().sizeDelta;
         detaly = (15* 0.255f) / (rectTransform.sizeDelta.y - (10.5f));
         for (int i = 0; i < Mathf.Min(sum, zhuangbei[index].Count); i++)
