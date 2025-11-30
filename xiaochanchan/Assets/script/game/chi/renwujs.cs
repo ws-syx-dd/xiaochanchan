@@ -29,18 +29,16 @@ public class renwujs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< Updated upstream
+
         string filepath = Application.dataPath + "/js/rwtext.json";
         string ls = File.ReadAllText(filepath);
         rw= JsonUtility.FromJson<rwlist>(ls).list;
-=======
         if (rw == null)
         {
-            TextAsset ls = Resources.Load<TextAsset>("js/rwtext");
-            rw = JsonUtility.FromJson<rwlist>(ls.text).list;
+            TextAsset lstext = Resources.Load<TextAsset>("js/rwtext");
+            rw = JsonUtility.FromJson<rwlist>(lstext.text).list;
         }
-        
->>>>>>> Stashed changes
+
     }
 
     // Update is called once per frame
