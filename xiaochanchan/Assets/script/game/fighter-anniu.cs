@@ -45,9 +45,7 @@ public class fighteranniu: MonoBehaviour
         myfighter.fighter = true;
         drfighter.fighter=true;
         myfighter.ismyfighter.FighterStart();
-        drfighter.zd();
-        drfighter.everytime();
-        myfighter.everytime();
+        drfighter.isdrfighter.FighterStart();
         StartCoroutine(fighterjc());
 
     }

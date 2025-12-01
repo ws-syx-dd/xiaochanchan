@@ -484,7 +484,124 @@
             "leixing":["every"],
             "fangshi":[21],
             "zhi":[1]
+        },
+        {
+            "id":41,
+            "imgwz":41,
+            "jieshao":"能量回复+0.5",
+            "name":"能量结晶",
+            "money":1,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["mphf"],
+            "fangshi":[1],
+            "zhi":[0.5]
+        },
+        {
+            "id": 42,
+            "imgwz": 42,
+            "jieshao": "若敌人有护盾则伤害+30%",
+            "name":"破盾斧",
+            "money": 1,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[22],
+            "zhi":[1]
+        },
+        {
+            "id": 43,
+            "imgwz": 43,
+            "jieshao": "每秒恢复2%的最大生命值，血量低于50%时翻倍",
+            "name":"金疮药",
+            "money": 1,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[23],
+            "zhi":[1]
+        },
+        {
+            "id": 44,
+            "imgwz": 44,
+            "jieshao": "攻击力+10%，敌人血量低于你时翻倍",
+            "name":"乘胜追击",
+            "money": 1,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[24],
+            "zhi":[1]
+        },
+        {
+            "id": 45,
+            "imgwz": 45,
+            "jieshao": "每次攻击使敌人获得1层伤",
+            "name":"撕裂伤口",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[25],
+            "zhi":[1]
+        },
+        {
+            "id": 46,
+            "imgwz": 46,
+            "jieshao": "战斗开始时获得等同于15%最大生命值的护盾",
+            "name":"坚盾",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[26],
+            "zhi":[1]
+        },
+        {
+            "id": 47,
+            "imgwz": 47,
+            "jieshao": "溢出的血量将对敌方造成伤害并转化为护盾",
+            "name":"囤积狂鼠",
+            "money": 10,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[27],
+            "zhi":[1]
+        },
+        {
+            "id": 48,
+            "imgwz": 48,
+            "jieshao": "每次施放技能获得10%最大生命值的护盾",
+            "name":"坚如磐石",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[28],
+            "zhi":[1]
+        },
+        {
+            "id": 49,
+            "imgwz": 49,
+            "jieshao": "当护盾被摧毁时将80%的当前生命值按照1:1.2转换为护盾",
+            "name":"不朽盾",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[29],
+            "zhi":[1]
+        },
+        {
+            "id": 50,
+            "imgwz": 50,
+            "jieshao": "消耗，获得130点护盾",
+            "name":"一次性盾牌",
+            "money": 1,
+            "xiaohui":true,
+            "count":1,
+            "leixing":["only"],
+            "shuxing":["shd"],
+            "fangshi":[1],
+            "zhi":[130]
         }
+        
+
+        
+        
         
     ]
 }

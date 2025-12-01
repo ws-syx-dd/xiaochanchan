@@ -114,6 +114,10 @@ public class everychi : MonoBehaviour
                     }
                     drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
                     break;
+                case ("shd", 0):
+                    if (fangshi == "+") myhp.shd += zhisum;
+                    else myhp.shd += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                    break;
                 case ("mp", 0):
                     if (fangshi == "+") mymp.mp += zhisum;
                     else mymp.mp += mymp.mpmax * zhisum;
@@ -267,6 +271,7 @@ public class everychi : MonoBehaviour
             Debug.Log("复活");
         }
     }
+
     
    
 }

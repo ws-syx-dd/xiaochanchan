@@ -8,6 +8,7 @@ public class sxchushi : MonoBehaviour
     public  class shuxing
     {
         public float hp;
+        public float shd;
         public float mp;
         public float atk;
         public float dps;
@@ -42,6 +43,7 @@ public class sxchushi : MonoBehaviour
     {   
         Debug.Log("myidΪ:"+myid);
         mysxchishu.hp = renwujs.rw[myid].hp;
+        mysxchishu.shd = renwujs.rw[myid].shd;
         mysxchishu.mp = renwujs.rw[myid].mp;
         mysxchishu.atk = renwujs.rw[myid].atk;
         mysxchishu.dps = renwujs.rw[myid].dps;
@@ -49,12 +51,14 @@ public class sxchushi : MonoBehaviour
         mysxchishu.mphf = renwujs.rw[myid].mphf;
         mysx1 = new shuxing();
         mysx2.hp = 1;
+        mysx2.shd = 1;
         mysx2.mp = 1;
         mysx2.atk = 1;
         mysx2.dps = 1;
         mysx2.dzbl = 1;
         mysx2.mphf = 1;
         drsxchishu.hp = 500;
+        drsxchishu.shd = 0;
         drsxchishu.mp = 120;
         drsxchishu.atk = 10;
         drsxchishu.dps = 5f;
@@ -62,6 +66,7 @@ public class sxchushi : MonoBehaviour
         drsxchishu.mphf = 5;
         drsx1 = new shuxing();
         drsx2.hp = 1;
+        drsx2.shd = 1;
         drsx2.mp = 1;
         drsx2.atk = 1;
         drsx2.dps = 1;

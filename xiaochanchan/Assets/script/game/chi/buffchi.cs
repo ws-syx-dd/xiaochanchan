@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class buffchi : MonoBehaviour
@@ -83,15 +84,14 @@ public class buffchi : MonoBehaviour
     public  void judu(float sum)
     {
         Debug.Log("当前血量" + drhp.hp + " 剧毒" + drbuff.buffzhi[2] + ":扣除血量" + drhp.hpmax * sum);
-        drhp.hp -= drhp.hpmax * sum;
+        drhp.hploss(drhp.hpmax * sum);
 
         drbuff.buffzhi[2]--;
     }
     public  void ranshao(float sum)
     {
         Debug.Log("当前血量" + drhp.hp + " 燃烧" + drbuff.buffzhi[3] + ":扣除血量" + drhp.hp * sum);
-        drhp.hp -= drhp.hp * sum;
-
+        drhp.hploss(drhp.hp * sum);
         drbuff.buffzhi[3]--;
     }
 

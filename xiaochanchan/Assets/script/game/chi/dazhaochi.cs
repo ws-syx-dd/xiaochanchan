@@ -22,7 +22,7 @@ public class dazhaochi : MonoBehaviour
             case 1:
                 if (duixang == 0)
                 {
-                    drhp.hp -= myfighter.atk * 10;
+                    drhp.hploss(myfighter.atk * 10);
                     myfighter.ismyfighter.everybig(myfighter.atk * 10);
 
                 }

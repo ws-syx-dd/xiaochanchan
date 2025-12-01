@@ -295,8 +295,64 @@
             "shuxing":"hp",
             "fangshi":"*",
             "zhi":1
-
-
+        },
+        {
+            "id":22,
+            "zbid":42,
+            "name":"破盾斧",
+            "jieshao": "若敌人有护盾则伤害+30%"
+        },
+        {
+            "id":23,
+            "zbid":43,
+            "name":"金疮药",
+            "jieshao": "每秒恢复2%的最大生命值，血量低于50%时翻倍"
+        },
+        {
+            "id":24,
+            "zbid":44,
+            "name":"乘胜追击",
+            "jieshao": "攻击力+10%，敌人血量低于你时翻倍"
+        },
+        {
+            "id":25,
+            "zbid":45,
+            "name":"撕裂伤口",
+            "jieshao": "每次攻击使敌人获得1层伤",
+            "leixing":"everyatk",
+            "shuxing":"shang",
+            "fangshi":"+",
+            "duixiang":1,
+            "zhi":1
+        },
+        {
+            "id":26,
+            "zbid":46,
+            "name":"坚盾",
+            "jieshao": "战斗开始时获得等同于15%最大生命值的护盾"
+        },
+        {
+            "id":27,
+            "zbid":47,
+            "name":"囤积狂鼠",
+            "jieshao": "溢出的血量将对敌方造成伤害并转化为护盾"
+        },
+        {
+            "id":28,
+            "zbid":48,
+            "name":"坚如磐石",
+            "jieshao": "每次施放技能获得10%最大生命值的护盾",
+            "leixing":"everydz",
+            "duixiang":0,
+            "shuxing":"shd",
+            "fangshi":"*",
+            "zhi":0.1
+        },
+        {
+            "id":29,
+            "zbid":49,
+            "name":"不朽盾",
+            "jieshao": "当护盾被摧毁时将80%的当前生命值按照1:1.2转换为护盾"
         }
 
 

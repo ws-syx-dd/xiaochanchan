@@ -75,6 +75,7 @@ public class myfighter : MonoBehaviour
     {
         ismyfighter.AllEveryAction["everyfighterstart"]?.Invoke();
         zd();
+        everytime();
 
     }
     public  void zd()
@@ -96,7 +97,7 @@ public class myfighter : MonoBehaviour
                     Debug.Log("攻击分裂");
                     for (int i = 0; i < 2; i++)
                     {
-                        drhp.hp -= atk * 0.35f;
+                        drhp.hploss(atk*0.35f);
                         mymp.mp += mphf;
                         everyatk(atk * 0.35f);
 
@@ -104,7 +105,7 @@ public class myfighter : MonoBehaviour
                 }
                 else
                 {
-                    drhp.hp -= atk;
+                    drhp.hploss(atk);
                     mymp.mp += mphf;
                     everyatk(atk);
                 }
@@ -237,6 +238,7 @@ public class myfighter : MonoBehaviour
          neardeathcount = 0;//濒死次数
          hitcount = 0;//受击次数
         harmsum = 0;//伤害总量
+        sxchushi.mysx1.shd = 0;
 
 
         if (jieguo == "win")

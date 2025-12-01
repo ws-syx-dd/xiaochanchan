@@ -8,6 +8,7 @@ public class rw
     public int id=0;
     public string name;
     public float hp;
+    public float shd;
     public float mp;
     public float atk;
     public float dps; 

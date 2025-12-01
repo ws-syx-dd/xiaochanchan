@@ -34,6 +34,7 @@ public class kongzhitai : MonoBehaviour
     }
     public static void zhuangbeiadd(int index1,int index2)
     {
+        Debug.Log("添加装备id:" + index2);
         int zbwz = -1;//装备位置
         if (zbdr.zb[index2].xiaohui)//销毁 不置入装备栏
         {

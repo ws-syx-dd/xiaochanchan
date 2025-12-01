@@ -62,13 +62,19 @@ public class drfighter : MonoBehaviour
     {
 
     }
+    public void FighterStart()
+    {
+        isdrfighter.AllEveryAction["everyfighterstart"]?.Invoke();
+        zd();
+        everytime();
+    }
     public void zd()
     {
        
             if (drmp.mp >= drmp.mpmax)
             {
                 donghua.Play("atk");
-                myhp.hp -= atk * dzbl;
+                myhp.hploss(atk*dzbl);
                 drmp.mp = 0;
                 everybig(dzbl);
                 
@@ -90,7 +96,7 @@ public class drfighter : MonoBehaviour
                 }
                 else
                 {
-                    myhp.hp -= atk;
+                    myhp.hploss(atk);
                     drmp.mp += mphf;
                     everyatk(atk);
                 }
@@ -154,6 +160,7 @@ public class drfighter : MonoBehaviour
     public static void stronger()//与dr在fighterend时一样 敌人升级
     {
         sxchushi.drsx1.hp += 50;
+        sxchushi.drsx1.shd = 0;
         sxchushi.drsx1.mp -= 10;
         sxchushi.drsx1.atk += 5;
         sxchushi.drsx1.dps += 0.1f;
@@ -165,7 +172,8 @@ public class drfighter : MonoBehaviour
         sxchushi.drlssx1 = new sxchushi.shuxing();
         sxchushi.drlssx2 = new sxchushi.shuxing();
         allupdata();
-        kongzhitai.zhuangbeiadd(1, UnityEngine.Random.Range(0, zbdr.zb.Count));
+        
+        
 
     }
     public static void allupdata()
@@ -254,6 +262,21 @@ public class drfighter : MonoBehaviour
             isdrfighter.AllEveryAction["neardeath"]?.Invoke();
         }
 
+    }
+    public async void RandomZBAdd()
+    {
+        while (true)
+        {
+            await UniTask.Yield();
+            int lsindex=UnityEngine.Random.Range(0, zbdr.zb.Count);
+            zb lszb=zbdr.zb[lsindex];
+            if (lszb.money <= 2 && lszb.uptiaojian == null)
+            {
+                kongzhitai.zhuangbeiadd(1,lsindex);
+                break;
+            }
+
+        }
     }
 
 
