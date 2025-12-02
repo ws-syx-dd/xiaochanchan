@@ -10,7 +10,7 @@ public class everychi : MonoBehaviour
 {   
     
     public static everychi chi;
-    public Dictionary<int, Action> ZBFunction = new Dictionary<int, Action>();
+    public Dictionary<int, Action> ZBFunction = new Dictionary<int, Action>();//目前every只能实现自己的办法
     private void Awake()
     {
         if(everychi.chi == null)
@@ -21,12 +21,15 @@ public class everychi : MonoBehaviour
     }
     private void Start()
     {
-        ZBFunction.Add(15, every15);
+        ZBFunction.Add(15,every15);
         ZBFunction.Add(18,every18);
         ZBFunction.Add(19,every19);
         ZBFunction.Add(20,every20);
         ZBFunction.Add(21,every21);
         ZBFunction.Add(22,every22);
+        ZBFunction.Add(24,every24);
+        ZBFunction.Add(28,every28);
+        ZBFunction.Add(30,every30);
     }
     public void EveryInOrOut(int duixiang,zb zb,int index, int inorout, int level = 1)
     {
@@ -77,14 +80,29 @@ public class everychi : MonoBehaviour
     public  float everyshixian(int id, float count=1, float zishiying = 0,int chufazhe=0)//every中的内容实现 zishiying为调用every产生的值 如hit中的受到伤害 atk中的造成伤害 chufazhe为触发此方法的人 0为玩家 1为敌人
     {
         every ls = everyjs.every[id];
-        float zhisum;
+        float zhisum=0;
         float zhiadd = 0;
-        if (!ls.auto) zhisum = count * ls.zhi;
-        else
+        if (ls.auto)//auto时处置方法
         {
             if (ls.autofangshi == "+") zhisum = count * (ls.zhi + zishiying);
             else zhisum = count * ls.zhi * zishiying;
         }
+        else if (ls.yinyongshuxing != null)//引用其他值时处置方法
+        {
+            switch (ls.yinyongshuxing)
+            {
+                case ("hp")://暂时没用过yinyongfangshi == "+"可以先不写
+                    //if (ls.yinyongfangshi == "+") zhisum = count * (ls.zhi + myhp.hp);
+                    //else zhisum=count*ls.zhi * myhp.hp;
+                    zhisum = count * ls.zhi * myhp.hp;
+                    break;
+                case ("atk"):
+                    zhisum = count * ls.zhi * myfighter.atk;
+                    break;
+
+            }
+        }
+        else zhisum = count * ls.zhi;
         Debug.Log($"zhisun:{zhisum}");
         zhiadd = fightersx(ls.shuxing, ls.duixiang, ls.fangshi, zhisum, zhiadd,chufazhe);
         //Debug.Log(zhiadd);
@@ -97,9 +115,9 @@ public class everychi : MonoBehaviour
             switch (shuxing, duixiang)//shuxing为属性 对象==0指自己 对象==1指敌人
                 {
                 case ("hp", 0):
-                    if (fangshi == "+") myhp.hp += zhisum;
-                    else myhp.hp += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
-                    myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
+                    if (fangshi == "+") myhp.hpup(zhisum);
+                    else myhp.hpup(myhp.hpmax * zhisum);//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                    //myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
                     break;
                 case ("hp", 1):
                     if (fangshi == "+")
@@ -116,7 +134,8 @@ public class everychi : MonoBehaviour
                     break;
                 case ("shd", 0):
                     if (fangshi == "+") myhp.shd += zhisum;
-                    else myhp.shd += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                    else myhp.shd += myhp.shd * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                    Debug.Log($"myshd:{myhp.shd}");
                     break;
                 case ("mp", 0):
                     if (fangshi == "+") mymp.mp += zhisum;
@@ -152,17 +171,17 @@ public class everychi : MonoBehaviour
                 case ("hp", 0):
                     if (fangshi == "+") drhp.hp += zhisum;
                     else drhp.hp += drhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
-                    drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
+                    //drhp.hp = Mathf.Clamp(drhp.hp, 0f, drhp.hpmax);
                     break;
                 case ("hp", 1):
                     if (fangshi == "+")
                     {
-                        myhp.hp += zhisum;
+                        myhp.hpup(zhisum);
                         zhiadd = zhisum;
                     }
                     else
                     {
-                        myhp.hp += myhp.hpmax * zhisum;//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
+                        myhp.hpup(myhp.hpmax * zhisum);//此法计算的为最大生命值的百分比 并未有当前生命值的百分别 暂不区分
                         zhiadd = myhp.hpmax * zhisum;
                     }
                     myhp.hp = Mathf.Clamp(myhp.hp, 0f, myhp.hpmax);
@@ -270,6 +289,22 @@ public class everychi : MonoBehaviour
             chi.everyshixian(22);
             Debug.Log("复活");
         }
+    }
+    public void every24()
+    {
+        chi.everyshixian(24);
+        if (myhp.hp <= myhp.hpmax / 2) chi.everyshixian(22);
+    }
+    public void every28()
+    {
+        myhp.shd += myhp.hponlyupoverflow;
+        Debug.Log($"护盾增加{myhp.hponlyupoverflow}");
+    }
+    public void every30()
+    {   
+        myhp.shd += myhp.hp * 0.8f;
+        myhp.hp *= 0.2f;
+        Debug.Log("不朽盾");
     }
 
     

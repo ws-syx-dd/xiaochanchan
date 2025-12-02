@@ -18,6 +18,8 @@ public class every
     public float gailv;//概率
     public bool auto;//使用变量而非自身的值
     public string autofangshi;//使用变量而非自身的值
+    public string yinyongshuxing;//引用其他属性而进行更改
+    public string yinyongfangshi;//引用其他属性的方式 +
     public float zhi;
     
 }

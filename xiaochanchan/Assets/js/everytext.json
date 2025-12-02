@@ -79,13 +79,13 @@
             "id":6,
             "zbid":21,
             "name":"红甲虫",
-            "jianjie":"每秒恢复3%的最大生命值",
+            "jianjie":"每秒恢复5%的最大生命值",
             "leixing":"everytime",
             "duixiang":0,
             "shuxing":"hp",
             "fangshi":"*",
             "gailv":0,
-            "zhi":0.03
+            "zhi":0.05
         },
         {
             "id":7,
@@ -297,25 +297,31 @@
             "zhi":1
         },
         {
-            "id":22,
+            "id":23,
             "zbid":42,
             "name":"破盾斧",
             "jieshao": "若敌人有护盾则伤害+30%"
         },
         {
-            "id":23,
+            "id":24,
             "zbid":43,
             "name":"金疮药",
-            "jieshao": "每秒恢复2%的最大生命值，血量低于50%时翻倍"
+            "jieshao": "每秒恢复2%的最大生命值，血量低于50%时翻倍",
+            "Action":"true",
+            "leixing":"everytimeAction",
+            "duixiang":0,
+            "shuxing":"hp",
+            "fangshi":"*",
+            "zhi":0.02
         },
         {
-            "id":24,
+            "id":25,
             "zbid":44,
             "name":"乘胜追击",
             "jieshao": "攻击力+10%，敌人血量低于你时翻倍"
         },
         {
-            "id":25,
+            "id":26,
             "zbid":45,
             "name":"撕裂伤口",
             "jieshao": "每次攻击使敌人获得1层伤",
@@ -326,33 +332,61 @@
             "zhi":1
         },
         {
-            "id":26,
+            "id":27,
             "zbid":46,
             "name":"坚盾",
-            "jieshao": "战斗开始时获得等同于15%最大生命值的护盾"
-        },
-        {
-            "id":27,
-            "zbid":47,
-            "name":"囤积狂鼠",
-            "jieshao": "溢出的血量将对敌方造成伤害并转化为护盾"
+            "jieshao": "战斗开始时获得等同于15%最大生命值的护盾",
+            "leixing":"everystart",
+            "duixiang":0,
+            "shuxing":"shd",
+            "fangshi":"+",
+            "yinyongshuxing":"hp",
+            "yinyongfangshi":"*",
+            "zhi":0.15
         },
         {
             "id":28,
+            "zbid":47,
+            "name":"囤积狂鼠",
+            "jieshao": "溢出的血量将对敌方造成伤害并转化为护盾",
+            "Action":"true",
+            "leixing":"everyhpupAction"
+            
+        },
+        {
+            "id":29,
             "zbid":48,
             "name":"坚如磐石",
             "jieshao": "每次施放技能获得10%最大生命值的护盾",
             "leixing":"everydz",
             "duixiang":0,
             "shuxing":"shd",
-            "fangshi":"*",
+            "fangshi":"+",
+            "yinyongshuxing":"hp",
+            "yinyongfangshi":"*",
             "zhi":0.1
+ 
         },
         {
-            "id":29,
+            "id":30,
             "zbid":49,
             "name":"不朽盾",
-            "jieshao": "当护盾被摧毁时将80%的当前生命值按照1:1.2转换为护盾"
+            "jieshao": "当护盾被摧毁时将80%的当前生命值按照1:1.2转换为护盾",
+            "Action":"true",
+            "leixing":"everyshdbreakAction"
+        },
+        {
+            "id":31,
+            "zbid":50,
+            "name":"先拔头筹",
+            "jieshao": "战斗开始时对敌人造成300%攻击力的伤害",
+            "leixing":"everystart",
+            "duixiang":1,
+            "shuxing":"hp",
+            "fangshi":"+",
+            "yinyongshuxing":"atk",
+            "yinyongfangshi":"*",
+            "zhi":-3
         }
 
 

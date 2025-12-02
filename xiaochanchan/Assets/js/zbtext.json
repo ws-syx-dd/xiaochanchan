@@ -247,7 +247,7 @@
         {
             "id": 21,
             "imgwz": 21,
-            "jieshao": "每秒恢复3%的最大生命值",
+            "jieshao": "每秒恢复5%的最大生命值",
             "name": "红甲虫",
             "money": 3,
             "count":1,
@@ -505,7 +505,7 @@
             "money": 1,
             "count":1,
             "leixing":["every"],
-            "fangshi":[22],
+            "fangshi":[23],
             "zhi":[1]
         },
         {
@@ -516,7 +516,7 @@
             "money": 1,
             "count":1,
             "leixing":["every"],
-            "fangshi":[23],
+            "fangshi":[24],
             "zhi":[1]
         },
         {
@@ -527,7 +527,7 @@
             "money": 1,
             "count":1,
             "leixing":["every"],
-            "fangshi":[24],
+            "fangshi":[25],
             "zhi":[1]
         },
         {
@@ -538,7 +538,7 @@
             "money": 2,
             "count":1,
             "leixing":["every"],
-            "fangshi":[25],
+            "fangshi":[26],
             "zhi":[1]
         },
         {
@@ -549,7 +549,7 @@
             "money": 2,
             "count":1,
             "leixing":["every"],
-            "fangshi":[26],
+            "fangshi":[27],
             "zhi":[1]
         },
         {
@@ -560,7 +560,7 @@
             "money": 10,
             "count":1,
             "leixing":["every"],
-            "fangshi":[27],
+            "fangshi":[28],
             "zhi":[1]
         },
         {
@@ -571,8 +571,9 @@
             "money": 3,
             "count":1,
             "leixing":["every"],
-            "fangshi":[28],
+            "fangshi":[29],
             "zhi":[1]
+
         },
         {
             "id": 49,
@@ -582,7 +583,7 @@
             "money": 3,
             "count":1,
             "leixing":["every"],
-            "fangshi":[29],
+            "fangshi":[30],
             "zhi":[1]
         },
         {
@@ -597,6 +598,17 @@
             "shuxing":["shd"],
             "fangshi":[1],
             "zhi":[130]
+        },
+        {
+            "id": 51,
+            "imgwz": 51,
+            "jieshao": "战斗开始时对敌人造成300%攻击力的伤害",
+            "name":"先拔头筹",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[31],
+            "zhi":[1]
         }
         
 

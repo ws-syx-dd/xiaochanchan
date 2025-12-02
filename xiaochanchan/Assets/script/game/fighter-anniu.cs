@@ -99,7 +99,7 @@ public class fighteranniu: MonoBehaviour
     }
     public void shengji()
     {
-        Debug.Log("111");
+        //Debug.Log("111");
         if (moneyscript.money >= 5&&zbllv<=5)
         {
             moneyscript.money -= 5; 

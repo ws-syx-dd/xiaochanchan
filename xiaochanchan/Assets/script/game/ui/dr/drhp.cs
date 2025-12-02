@@ -45,7 +45,7 @@ public class drhp : MonoBehaviour
         hpmax = (sxchushi.drsxchishu.hp + sxchushi.drsx1.hp + sxchushi.drlssx1.hp) * (sxchushi.drsx2.hp + sxchushi.drlssx2.hp);
         hpmax =Mathf.Round(hpmax);
         hp=hpmax;
-        shd = (sxchushi.mysxchishu.shd + sxchushi.mysx1.shd + sxchushi.mylssx1.shd) * (sxchushi.mysx2.shd + sxchushi.mylssx2.shd);
+        shd = (sxchushi.drsxchishu.shd + sxchushi.drsx1.shd + sxchushi.drlssx1.shd) * (sxchushi.drsx2.shd + sxchushi.drlssx2.shd);
     }
     public static void hploss(float i)
     {

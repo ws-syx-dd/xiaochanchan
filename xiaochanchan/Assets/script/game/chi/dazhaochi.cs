@@ -43,7 +43,7 @@ public class dazhaochi : MonoBehaviour
                 if (duixang == 0)
                 {
                     float atk = myfighter.atk*2;
-                    myhp.hp += atk;
+                    myhp.hpup(atk);
                     myhp.hpupdata();
                     myfighter.everyatk(atk);
                 }

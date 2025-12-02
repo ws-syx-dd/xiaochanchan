@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,8 @@ public class myhp : MonoBehaviour
     public GameObject shdparent;
     public static float hpmax;
     public static float hp;
+    public static float hponlyup;//记录单次hp上升的值
+    public static float hponlyupoverflow;//记录单次hp上升时溢出的值
     public static float shd;
     private RectTransform hpimage;
     void Start()
@@ -53,12 +56,33 @@ public class myhp : MonoBehaviour
     }
     public static void hploss(float i)
     {
-        if (shd >= i) shd -= i;
+        if (shd > i) shd -= i;
         else
         {
-            i -= shd;
-            shd = 0;
+            if (shd > 0)
+            {
+                i -= shd;
+                shd = 0;
+                myfighter.ismyfighter.AllEveryAction["everyshdbreakAction"]?.Invoke();
+            }
+            
             hp -= i;
         }
     }
+    public static void hpup(float zhi)
+    {   
+        hponlyup = zhi;
+        hponlyupoverflow = 0;
+        if (hp + zhi > hpmax)
+        {
+            hponlyupoverflow = hp + zhi - hpmax;
+            hp = hpmax;
+        }
+        Debug.Log($"hponlyup:{hponlyup}");
+        Debug.Log($"hponlyupoverflow:{hponlyupoverflow}");
+        myfighter.ismyfighter.AllEveryAction["everyhpupAction"]?.Invoke();
+
+    }
+
+
 }

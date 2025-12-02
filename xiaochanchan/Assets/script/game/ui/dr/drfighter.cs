@@ -6,6 +6,14 @@ using UnityEngine;
 
 public class drfighter : MonoBehaviour
 {
+    public class Allaction
+    {
+        public Action everyfighterstart;
+        public Action everyfighterend;
+        public Action neardeath;
+        public Action everyhitAction;
+        public Action everyatkAction;
+    }
     public static drfighter isdrfighter;
     // Start is called before the first frame update
     public static float atk;//攻击力 
@@ -19,11 +27,7 @@ public class drfighter : MonoBehaviour
     public static Dictionary<int, int> everytimemap = new Dictionary<int, int>();
     public static Dictionary<int, int> everystartmap = new Dictionary<int, int>();
     public Dictionary<string, Action> AllEveryAction = new Dictionary<string, Action>();
-    public Action everyfighterstart;
-    public Action everyfighterend;
-    public Action neardeath;
-    public Action everyhitAction;
-    public Action everyatkAction;
+    public Allaction drAllaction = new Allaction();
     public static int neardeathcount = 0;//濒死次数
     public static int hitcount = 0;//受击次数
     public static int atkcount = 0;//攻击次数
@@ -49,11 +53,11 @@ public class drfighter : MonoBehaviour
         donghua.runtimeAnimatorController = dranimator.Controller[sxchushi.myid];
         shouji = shoujidr;
         shoujipr = shoujiprdr;
-        AllEveryAction.Add("everyfighterstart", everyfighterstart);
-        AllEveryAction.Add("everyfighterend", everyfighterend);
-        AllEveryAction.Add("neardeath", neardeath);
-        AllEveryAction.Add("everyhitAction", everyhitAction);
-        AllEveryAction.Add("everyatkAction", everyatkAction);
+        AllEveryAction.Add("everyfighterstart", isdrfighter.drAllaction.everyfighterstart);
+        AllEveryAction.Add("everyfighterend", isdrfighter.drAllaction.everyfighterend);
+        AllEveryAction.Add("neardeath", isdrfighter.drAllaction.neardeath);
+        AllEveryAction.Add("everyhitAction", isdrfighter.drAllaction.everyhitAction);
+        AllEveryAction.Add("everyatkAction", isdrfighter.drAllaction.everyatkAction);
         //Debug.Log(shouji.name);
     }
 

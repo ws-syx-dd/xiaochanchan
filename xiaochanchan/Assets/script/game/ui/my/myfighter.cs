@@ -10,23 +10,31 @@ using UnityEngine.UI;
 
 public class myfighter : MonoBehaviour
 {
+    public class Allaction
+    {
+        public Action everyfighterstart;
+        public Action everyfighterend;
+        public Action neardeath;
+        public Action everyhitAction;
+        public Action everyatkAction;
+        public Action everytimeAction;
+        public Action everysdhbreakAction;
+        public Action everyhpupAction;
+    }
+
     public static myfighter ismyfighter;
     public static float atk;//攻击力 
     public static float dps;//攻速 1秒x次攻击
     public static float dzbl;//大招倍率
     public static float mphf;//蓝量恢复 每次攻击时回蓝 
     public static bool fighter=false;
-    public static Dictionary<int,int>everyatkmap= new Dictionary<int,int>();
+    public static Dictionary<int,int>everyatkmap= new Dictionary<int,int>();//别的东西会用反射找到这几条map 暂时不用class封装
     public static Dictionary<int,int>everyhitmap= new Dictionary<int,int>();
     public static Dictionary<int,int>everydzmap= new Dictionary<int,int>();
     public static Dictionary<int,int>everytimemap= new Dictionary<int,int>();
     public static Dictionary<int,int>everystartmap= new Dictionary<int,int>();
     public  Dictionary<string,Action>AllEveryAction= new Dictionary<string,Action>();
-    public Action everyfighterstart;
-    public Action everyfighterend ;
-    public Action neardeath;
-    public Action everyhitAction;
-    public Action everyatkAction;
+    public Allaction myAllaction=new Allaction();
     public static int neardeathcount = 0;//濒死次数
     public static int hitcount = 0;//受击次数
     public static int atkcount = 0;//攻击次数
@@ -52,11 +60,14 @@ public class myfighter : MonoBehaviour
         donghua.runtimeAnimatorController = dranimator.Controller[sxchushi.myid];
         shouji = shoujidr;
         shoujipr=shoujiprdr;
-        AllEveryAction.Add("everyfighterstart", everyfighterstart);
-        AllEveryAction.Add("everyfighterend", everyfighterend);
-        AllEveryAction.Add("neardeath", neardeath);
-        AllEveryAction.Add("everyhitAction", everyhitAction);
-        AllEveryAction.Add("everyatkAction", everyatkAction);
+        AllEveryAction.Add("everyfighterstart", ismyfighter.myAllaction.everyfighterstart);
+        AllEveryAction.Add("everyfighterend", ismyfighter.myAllaction.everyfighterend);
+        AllEveryAction.Add("neardeath", ismyfighter.myAllaction.neardeath);
+        AllEveryAction.Add("everyhitAction", ismyfighter.myAllaction.everyhitAction);
+        AllEveryAction.Add("everyatkAction", ismyfighter.myAllaction.everyatkAction);
+        AllEveryAction.Add("everytimeAction", ismyfighter.myAllaction.everytimeAction);
+        AllEveryAction.Add("everyshdbreakAction", ismyfighter.myAllaction.everysdhbreakAction);
+        AllEveryAction.Add("everyhpupAction", ismyfighter.myAllaction.everyhpupAction);
         
 
 
@@ -73,7 +84,18 @@ public class myfighter : MonoBehaviour
     }
     public void FighterStart()
     {
+        Debug.Log("战斗开始");
+        float zhi = 0;
+        float zhisum = 0;
+
+        foreach (var i in everystartmap)
+        {
+            Debug.Log("everystartmap:" + i.Key);
+            zhisum += everychi.chi.everyshixian(i.Key, zhuangbeichi.gailvcount(i.Key, i.Value), zhi);
+        }
+        if (zhisum > 0) drfighter.everyhit(-Mathf.Round(zhisum));
         ismyfighter.AllEveryAction["everyfighterstart"]?.Invoke();
+
         zd();
         everytime();
 
@@ -193,7 +215,8 @@ public class myfighter : MonoBehaviour
     }
     public void everytime()
     {
-       foreach (var i in everytimemap)
+        ismyfighter.AllEveryAction["everytimeAction"]?.Invoke();
+        foreach (var i in everytimemap)
         {
             everychi.chi.everyshixian(i.Key, zhuangbeichi.gailvcount(i.Key, i.Value));
         }
