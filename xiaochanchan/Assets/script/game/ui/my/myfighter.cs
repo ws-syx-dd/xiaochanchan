@@ -33,6 +33,7 @@ public class myfighter : MonoBehaviour
     public static Dictionary<int,int>everydzmap= new Dictionary<int,int>();
     public static Dictionary<int,int>everytimemap= new Dictionary<int,int>();
     public static Dictionary<int,int>everystartmap= new Dictionary<int,int>();
+    public static Dictionary<int,int>everyhpupmap= new Dictionary<int,int>();
     public  Dictionary<string,Action>AllEveryAction= new Dictionary<string,Action>();
     public Allaction myAllaction=new Allaction();
     public static int neardeathcount = 0;//濒死次数
@@ -253,6 +254,17 @@ public class myfighter : MonoBehaviour
             neardeathcount++;
             ismyfighter.AllEveryAction["neardeath"]?.Invoke();
         }
+    }
+    public static void everyhpup(float zhi = 0)
+    {
+        Debug.Log("生命回复");
+        float zhisum = zhi;
+        foreach (var i in everyhpupmap)
+        {
+            Debug.Log("everyhpupmap:" + i.Key);
+            zhisum += everychi.chi.everyshixian(i.Key, zhuangbeichi.gailvcount(i.Key, i.Value), zhi);
+        }
+
     }
     public void fighterend(string jieguo) 
     {

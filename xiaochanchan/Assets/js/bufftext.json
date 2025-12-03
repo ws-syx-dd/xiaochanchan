@@ -31,6 +31,21 @@
             "leixing":"0",
             "fangshi":1,
             "zhi":0.02
+        },
+        {
+            "id":4,
+            "name":"舞",
+            "time":"0",
+            "leixing":"0",
+            "fangshi":1
+        },
+        {
+            "id":5,
+            "name":"伤",
+            "time":"0",
+            "leixing":"0",
+            "fangshi":1,
+            "zhi":1
         }
     ]
 }

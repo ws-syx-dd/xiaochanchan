@@ -609,6 +609,61 @@
             "leixing":["every"],
             "fangshi":[31],
             "zhi":[1]
+        },
+        {
+            "id": 52,
+            "imgwz": 52,
+            "jieshao": "当护盾被摧毁时对敌人造成本次使其摧毁的伤害",
+            "name":"反震",
+            "money": 1,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[32],
+            "zhi":[1]
+        },
+        {
+            "id": 53,
+            "imgwz": 53,
+            "jieshao": "每次攻击有30%使敌人获得X层伤(X为你攻速的整数部分)",
+            "name":"快刀斩乱麻",
+            "money": 3,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[33],
+            "zhi":[1]
+        },
+        {
+            "id": 54,
+            "imgwz": 54,
+            "jieshao": "每次攻击时敌人获得2层燃烧",
+            "name":"一刀一刀燃烧刀",
+            "money": 10,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[34],
+            "zhi":[1]
+        },
+        {
+            "id": 55,
+            "imgwz": 55,
+            "jieshao": "每次回复生命时额外回复5点生命值",
+            "name":"如沐春风",
+            "money": 2,
+            "count":1,
+            "leixing":["every"],
+            "fangshi":[35],
+            "zhi":[1]
+        },
+        {
+            "id": 56,
+            "imgwz": 56,
+            "jieshao": "固定，解锁一个装备栏，获得10G",
+            "name":"恶魔协商",
+            "money": 3,
+            "count":1,
+            "leixing":["qita"],
+            "fangshi":[56],
+            "zhi":[1]
         }
         
 

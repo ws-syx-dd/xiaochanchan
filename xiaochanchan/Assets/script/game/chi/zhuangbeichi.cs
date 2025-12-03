@@ -38,7 +38,7 @@ public class zhuangbeichi: MonoBehaviour
             }
             else if (zb.leixing[i] == "qita")
             {
-                qitaxiaoguo(zb.fangshi[i], (int)zb.zhi[i]*level*inorout);
+                qitaxiaoguo(zb.fangshi[i]);
             }
         }
     }
@@ -107,6 +107,25 @@ public class zhuangbeichi: MonoBehaviour
                 if (i < 1) moneyscript.money += 3;
                 else if(i>=1&&i<=4) moneyscript.money += 2;
                 fighteranniu.moneytext.text = moneyscript.money.ToString();
+                break;
+            case 56:
+                moneyscript.money += 10;
+                fighteranniu.moneytext.text = moneyscript.money.ToString();
+                for(int j = 0; j < zblan.zbl.Length; j++)
+                {
+                    if (zblan.zbl[j] == -2)
+                    {
+                        Debug.Log(j);
+                        zblan.zbl[j] = -1;
+                        zblan.zblimg[j].sprite = null;
+                        if (j % 2 == 1)
+                        {
+                            fighteranniu.xydlv++;
+                            fighteranniu.xyd(fighteranniu.xydlv);
+                        }
+                        break;
+                    }
+                }
                 break;
         }
     }

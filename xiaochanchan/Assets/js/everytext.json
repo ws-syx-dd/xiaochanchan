@@ -11,7 +11,6 @@
             "fangshi":"+",
             "gailv":0.2,
             "zhi":-100
-            
         },
         {
             "id":1,
@@ -271,8 +270,6 @@
             "auto":true,
             "autofangshi":"*",
             "zhi":-0.003
-
-
         },
         {
             "id":21,
@@ -281,8 +278,6 @@
             "jieshao": "当敌人由攻击所受的总伤害大于其最大生命值时，直接死亡。",
             "Action":"true",
             "leixing":"everyatkAction"
-            
-
         },
         {
             "id":22,
@@ -318,7 +313,9 @@
             "id":25,
             "zbid":44,
             "name":"乘胜追击",
-            "jieshao": "攻击力+10%，敌人血量低于你时翻倍"
+            "jieshao": "攻击力+10%，敌人血量低于你时翻倍",
+            "Action":"true",
+            "leixing":"everyfighterstart"
         },
         {
             "id":26,
@@ -377,7 +374,7 @@
         },
         {
             "id":31,
-            "zbid":50,
+            "zbid":51,
             "name":"先拔头筹",
             "jieshao": "战斗开始时对敌人造成300%攻击力的伤害",
             "leixing":"everystart",
@@ -387,9 +384,50 @@
             "yinyongshuxing":"atk",
             "yinyongfangshi":"*",
             "zhi":-3
+        },
+        {
+            "id":32,
+            "zbid":52,
+            "name":"反震",
+            "jieshao": "当护盾被摧毁时对敌人造成本次使其摧毁的伤害"
+        },
+        {
+            "id":33,
+            "zbid":53,
+            "name":"快刀斩乱麻",
+            "jieshao": "每次攻击有30%使敌人获得X层伤(X为你攻速的整数部分)",
+            "leixing":"everyatk",
+            "gailv":0.3,
+            "shuxing":"shang",
+            "fangshi":"+",
+            "yinyongshuxing":"dps",
+            "yinyongfangshi":"*",
+            "duixiang":1,
+            
+            "zhi":1
+        },
+        {
+            "id":34,
+            "zbid":54,
+            "name":"一刀一刀燃烧刀",
+            "jieshao": "每次攻击时敌人获得1层燃烧",
+            "leixing":"everyatk",
+            "shuxing":"ranshao",
+            "fangshi":"+",
+            "duixiang":1,
+            "zhi":1
+        },
+        {
+            "id":35,
+            "zbid":55,
+            "name":"如沐春风",
+            "jieshao": "每次回复生命时额外回复5点生命值",
+            "Action":"true",
+            "leixing":"everyhpupAction",
+            "duixiang":0,
+            "shuxing":"hp",
+            "fangshi":"+",
+            "zhi":-5
         }
-
-
-        
     ]
 }

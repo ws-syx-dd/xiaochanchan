@@ -76,11 +76,12 @@ public class myhp : MonoBehaviour
         if (hp + zhi > hpmax)
         {
             hponlyupoverflow = hp + zhi - hpmax;
-            hp = hpmax;
         }
+        hp = Mathf.Clamp(hp + zhi, 0, hpmax);
         Debug.Log($"hponlyup:{hponlyup}");
         Debug.Log($"hponlyupoverflow:{hponlyupoverflow}");
         myfighter.ismyfighter.AllEveryAction["everyhpupAction"]?.Invoke();
+        myfighter.everyhpup();
 
     }
 

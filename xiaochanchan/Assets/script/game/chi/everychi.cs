@@ -28,8 +28,10 @@ public class everychi : MonoBehaviour
         ZBFunction.Add(21,every21);
         ZBFunction.Add(22,every22);
         ZBFunction.Add(24,every24);
+        ZBFunction.Add(25,every25);
         ZBFunction.Add(28,every28);
         ZBFunction.Add(30,every30);
+        ZBFunction.Add(35,every35);
     }
     public void EveryInOrOut(int duixiang,zb zb,int index, int inorout, int level = 1)
     {
@@ -99,7 +101,9 @@ public class everychi : MonoBehaviour
                 case ("atk"):
                     zhisum = count * ls.zhi * myfighter.atk;
                     break;
-
+                case ("dps"):
+                    zhisum = count * ls.zhi * myfighter.dps;
+                    break;
             }
         }
         else zhisum = count * ls.zhi;
@@ -155,14 +159,19 @@ public class everychi : MonoBehaviour
                     else sxchushi.mylssx2.dps += zhisum;
                     myfighter.dpsupdata();
                     break;
-
                 case ("du", 1):
                     if (fangshi == "+") buffchi.chi.buff(0, 2, zhisum);
                     break;
                 case ("bingshuang", 1):
                     if (fangshi == "+") buffchi.chi.buff(0, 0, zhisum);
                     break;
-                }
+                case ("ranshao", 1):
+                    if (fangshi == "+") buffchi.chi.buff(0, 3, zhisum);
+                    break;
+                case ("shang", 1):
+                    if (fangshi == "+") buffchi.chi.buff(0, 5, zhisum);
+                    break;
+            }
         }
         else
         {
@@ -204,16 +213,14 @@ public class everychi : MonoBehaviour
                     else sxchushi.drlssx2.dps += zhisum;
                     drfighter.dpsupdata();
                     break;
-
-                case ("du", 1):
-                    if (fangshi == "+") buffchi.chi.buff(1, 2, zhisum);
-                    break;
-                case ("bingshuang", 1):
-                    if (fangshi == "+") buffchi.chi.buff(1, 0, zhisum);
-                    break;
+                //case ("du", 1): 这两条目前只有玩家能生效 暂时不管了 
+                //    if (fangshi == "+") buffchi.chi.buff(1, 2, zhisum);
+                //    break;
+                //case ("bingshuang", 1):
+                //    if (fangshi == "+") buffchi.chi.buff(1, 0, zhisum);
+                //    break;
             }
         }
-        
         return zhiadd;
     }
     public void every18()
@@ -252,8 +259,6 @@ public class everychi : MonoBehaviour
             Debug.Log($"支援未来剩余{time}秒");
             chi.everyshixian(19);
         }
-        
-
     }
     public async void every20()
     {
@@ -295,9 +300,33 @@ public class everychi : MonoBehaviour
         chi.everyshixian(24);
         if (myhp.hp <= myhp.hpmax / 2) chi.everyshixian(22);
     }
+    public async void every25()
+    {
+        sxchushi.mylssx2.atk += 0.1f;
+        myfighter.atkupdata();
+        bool moshi=false;
+        while (myfighter.fighter)
+        {
+            await UniTask.Yield();
+            if (!moshi && myhp.hp > drhp.hp)
+            {
+                sxchushi.mylssx2.atk += 0.1f;
+                myfighter.atkupdata();
+                moshi=true;
+            }
+            else if (moshi && myhp.hp <= drhp.hp)
+            {
+                sxchushi.mylssx1.atk -= 0.1f;
+                myfighter.atkupdata();
+                moshi =false;
+            }
+        }
+        Debug.Log("every25stop");
+    }
     public void every28()
     {
         myhp.shd += myhp.hponlyupoverflow;
+        drhp.hploss(myhp.hponlyupoverflow);
         Debug.Log($"护盾增加{myhp.hponlyupoverflow}");
     }
     public void every30()
@@ -306,8 +335,13 @@ public class everychi : MonoBehaviour
         myhp.hp *= 0.2f;
         Debug.Log("不朽盾");
     }
+    public void every35()
+    {
+        chi.everyshixian(35);
+        Debug.Log("如沐春风");
+    }
 
-    
-   
+
+
 }
 

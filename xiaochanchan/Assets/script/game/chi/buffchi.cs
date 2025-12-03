@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class buffchi : MonoBehaviour
 {
-    public static buffchi chi;
+    public static buffchi chi;//按理来说可以将所有的方法写成事件被订阅 暂时没做
     private void Awake()
     {
         if(chi == null)chi=this;
@@ -25,6 +25,7 @@ public class buffchi : MonoBehaviour
             else
             {
                 drbuff.buffzhi[fangshi] = drbuff.buffzhi[fangshi] + zhi;
+                drbuff.buffupdata();//他会遍历所有的buff并更改他们 既 最差的情况下 
             }
             switch (fangshi)
             {
@@ -94,5 +95,12 @@ public class buffchi : MonoBehaviour
         drhp.hploss(drhp.hp * sum);
         drbuff.buffzhi[3]--;
     }
+    public float shang(float sum)
+    {
+        Debug.Log("当前血量" + drhp.hp + " 伤" + drbuff.buffzhi[5] + ":扣除血量" + drhp.hp * sum);
+        drhp.hploss(sum);
+        return sum;
+    }
+
 
 }

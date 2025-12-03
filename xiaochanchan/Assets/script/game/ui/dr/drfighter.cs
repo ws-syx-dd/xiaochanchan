@@ -163,6 +163,7 @@ public class drfighter : MonoBehaviour
     }
     public static void stronger()//与dr在fighterend时一样 敌人升级
     {
+        drfighter.isdrfighter.RandomZBAdd().Forget();
         sxchushi.drsx1.hp += 50;
         sxchushi.drsx1.shd = 0;
         sxchushi.drsx1.mp -= 10;
@@ -190,7 +191,7 @@ public class drfighter : MonoBehaviour
         mphfupdata();
     }
     public  void everyatk(float zhi)
-    {
+    {   
         //zhuangbeichi.zblevelup("everyatk"); //目前只有玩家能正常触发等后期代码更改
         float zhisum = -zhi;
         foreach (var i in everyatkmap)
@@ -256,6 +257,10 @@ public class drfighter : MonoBehaviour
         {
             everychi.chi.everyshixian(i.Key, zhuangbeichi.gailvcount(i.Key, i.Value), zhi, 1);
         }
+        if (drbuff.buffzhi.ContainsKey(5))
+        {
+            zhi += buffchi.chi.shang(drbuff.buffzhi[5] * buffdr.buff[5].zhi);
+        }
         drfighter.donghua.Play("hit", 1, 0f);
         GameObject ls = Instantiate(shouji, shoujipr.transform);
         ls.GetComponent<hit>().Animatorstart(-zhi);
@@ -267,7 +272,7 @@ public class drfighter : MonoBehaviour
         }
 
     }
-    public async void RandomZBAdd()
+    public async UniTask RandomZBAdd()
     {
         while (true)
         {
